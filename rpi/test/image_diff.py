@@ -13,7 +13,7 @@ def main():
     # diff = cv2.adaptiveThreshold(diff, 255, cv2.ADAPTIVE_THRESH_MEAN_C,  cv2.THRESH_BINARY, 5, 1)
     _, diff = cv2.threshold(diff, 40, 255, cv2.THRESH_BINARY)
     # diff = cv2.dilate(diff, None, iterations=2)
-    cv2.imwrite("thresh.jpg", diff)
+    cv2.imwrite("test-images/thresh.jpg", diff)
     diff = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
     # cv2.imshow("diff", diff)
     # cv2.waitKey(0)
@@ -21,10 +21,10 @@ def main():
     biggest_contour_idx, biggest_contour_val = max(enumerate(contours), key=lambda e: len(e[1]))
     print(cv2.contourArea(biggest_contour_val))
     throw_place = tuple(max(biggest_contour_val, key=lambda p: p[0][1])[0])
-    # print(throw_place)
+    print(throw_place)
     cv2.circle(after, throw_place, 5, (0, 255, 0), 5)
-    #cv2.drawContours(after, contours, biggest_contour_idx, (0, 255, 0), 5)
-    cv2.imwrite("diff.jpg", after)
+    cv2.drawContours(after, contours, biggest_contour_idx, (0, 255, 0), 5)
+    cv2.imwrite("test-images/diff.jpg", after)
 
 
 main()

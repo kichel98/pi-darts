@@ -8,7 +8,7 @@ REMOTE_IP="192.168.1.51"
 DIR_TO_SYNC="../rpi"
 
 function sync_with_remote() {
-  rsync -avz -e "$1" $DIR_TO_SYNC pi@$REMOTE_IP:~/Desktop/pi-darts --delete
+  rsync -avz -e "$1" $DIR_TO_SYNC pi@$REMOTE_IP:~/Desktop/pi-darts --delete --exclude test/test-images
 }
 
 [[ -z $1 ]] && ssh_args="" || ssh_args="-i $1"

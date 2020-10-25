@@ -11,5 +11,5 @@ with picamera.PiCamera() as camera:
     image = np.empty((1936 * 2592 * 3,), dtype=np.uint8)
     camera.capture(image, 'bgr')
     image = image.reshape((1936, 2592, 3))
-    cv2.imwrite("test.jpg", image)
+    cv2.imwrite("test-images/test.jpg", image)
 
