@@ -2,16 +2,16 @@
 # to develop on Windows and automatically push changes to RPi.
 
 # Can be used with RSA key (identity_file). Otherwise rsync asks for password after every change.
-# Usage: ./sync.sh [path_to_identity_file]
+# Usage: ./sync.sh ip_number [path_to_identity_file]
 
-REMOTE_IP="192.168.1.51"
+REMOTE_IP=$1
 DIR_TO_SYNC="../rpi"
 
 function sync_with_remote() {
-  rsync -avz -e "$1" $DIR_TO_SYNC pi@$REMOTE_IP:~/Desktop/pi-darts --delete --exclude test/test-images
+  rsync -avz -e "$1" $DIR_TO_SYNC pi@"$REMOTE_IP":~/Desktop/pi-darts --delete --exclude test/test-images
 }
 
-[[ -z $1 ]] && ssh_args="" || ssh_args="-i $1"
+[[ -z $2 ]] && ssh_args="" || ssh_args="-i $2"
 ssh_command="ssh $ssh_args"
 
 sync_with_remote "$ssh_command"

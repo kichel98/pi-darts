@@ -55,7 +55,7 @@ def is_contour_dart(contour):
 # If throw occured, throw_occured is True and throw_contour is array of points in contour
 # Otherwise, throw_occured is False and throw_contour is empty array
 def look_for_throw(before, after):
-    THRESHOLD = 25
+    THRESHOLD = 20
     diff = cv2.absdiff(before, after)
     _, diff = cv2.threshold(diff, THRESHOLD, 255, cv2.THRESH_BINARY)
     diff = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
@@ -94,32 +94,35 @@ def setup_camera(cam):
     cam.awb_mode = 'tungsten'
     for _ in range(TEST_FRAMES):
         take_image(cam)  # unnecessary rotate
+    # cam.shutter_speed = cam.exposure_speed
+    # cam.exposure_mode = 'off'
+    # g = cam.awb_gains
+    # cam.awb_gains = g
+    # cam.iso = 800
+
     print("[INFO] Cam is ready!")
 
 
 def main():
+    counter = 0
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("192.168.1.51", 1234))
-        s.listen()
-        conn, addr = s.accept()
-        with conn:
-            with picamera.PiCamera() as main_cam:
-                setup_camera(main_cam)
-                previous_frame = take_image(main_cam)
-                while True:
-                    frame = take_image(main_cam)
-                    ret, cnt = look_for_throw(previous_frame, frame)
-                    if ret:
-                        print(get_landing_point(cnt))
-                        data = conn.recv(3 * 4)
-                        # TODO: check if data is not 0 (can occurs after disconnect)
-                        print("New data from Pi Zero!")
-                        counter = int.from_bytes(data[:4], byteorder="big")
-                        x = int.from_bytes(data[4:8], byteorder="big")
-                        y = int.from_bytes(data[8:12], byteorder="big")
-                        print(f"Dart no. {counter}")
-                        print(f"x: {x}, y: {y}")
-                    previous_frame = frame
+        s.connect(("192.168.1.51", 1234))
+        with picamera.PiCamera() as main_cam:
+            setup_camera(main_cam)
+            previous_frame = take_image(main_cam)
+            while True:
+                frame = take_image(main_cam)
+                ret, cnt = look_for_throw(previous_frame, frame)
+                if ret:
+                    counter += 1
+                    x, y = get_landing_point(cnt)
+                    print(x, y)
+                    counter_b = int(counter).to_bytes(4, byteorder="big")
+                    x_b = int(x).to_bytes(4, byteorder="big")
+                    y_b = int(y).to_bytes(4, byteorder="big")
+                    data = bytes(counter_b + x_b + y_b)
+                    s.send(data)
+                previous_frame = frame
 
 
 if __name__ == '__main__':
