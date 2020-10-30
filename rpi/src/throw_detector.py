@@ -4,24 +4,38 @@ from dataclasses import dataclass
 
 import cv2
 
-from camera import Camera
-
 
 @dataclass
 class DetectorConfig:
+    """
+        Produces config object for ThrowDetector.
+
+        Arguments:
+            threshold           value that indicates which pixels should be treated as change
+            min_contour_area    minimum value of contour area which qualifies contour to be a throw
+            max_contour_area    maximum value of contour area which qualifies contour to be a throw
+    """
     threshold = 25
     min_contour_area = 15000
     max_contour_area = 100000
 
 
 class ThrowDetector(object):
-    def __init__(self, camera: Camera, config: DetectorConfig):
-        self.camera = camera  # useless
+    """
+        Resposible for detecting single throw.
+        Parametrized by DetectorConfig object.
+    """
+    def __init__(self, config: DetectorConfig):
         self.config = config
 
     def look_for_throw(self, before, after):
         """
-            Takes two frames and analyzes whether dart throw occured between them.
+            Takes two frames and analyzes whether dart throw occured between them, using background substraction.
+
+            Arguments:
+                before  frame/image, which had captured earlier than "after" image, is treated as base image
+                after   frame/image, which was captured after "before" image, treated as image with possible change
+
             Returns tuple: (throw_occured, throw_contour)
             If throw occured, throw_occured is True and throw_contour is array of points in contour
             Otherwise, throw_occured is False and throw_contour is empty array
@@ -52,12 +66,23 @@ class ThrowDetector(object):
             possible improvements:
                 you can use contourArea, minAreaRect, arcLength and others
             limits need to be determined empirically
+
+            Arguments:
+                contour     one of contour from cv2.findContours()
         """
         area = cv2.contourArea(contour)
         return self.config.min_contour_area < area < self.config.max_contour_area
 
     @staticmethod
     def save_contour(after, contour, area):
+        """
+            Draws contour on image and saves is to file.
+
+            Arguments:
+                after       image with change in OpenCV format
+                contour     detected contour, one of contour from cv2.findContours()
+                area        contour area, return value from cv2.contourArea(), used as part of image filename
+        """
         after_copy = after.copy()
         cv2.drawContours(after_copy, [contour], 0, (0, 255, 0), 5)
         cv2.circle(after_copy, ThrowDetector.get_landing_point(contour), 5, (0, 0, 255), 5)
@@ -67,8 +92,11 @@ class ThrowDetector(object):
     @staticmethod
     def get_landing_point(contour):
         """
-            Returns lowest (closest to bottom of image) point of contour
-            Point is list [x, y]
+            Returns lowest (closest to bottom of image) point of contour.
+            Point is represented as list [x, y].
+
+            Arguments:
+                contour     detected contour, one of contour from cv2.findContours()
         """
         # don't know why, but every element of contour is not [x, y], but [[x, y]]
         # we use max, because [0, 0] is left upper corner

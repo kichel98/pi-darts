@@ -12,14 +12,14 @@ class CameraConfig:
         Class designed to produce config camera object.
         Contains all parameters required to correct camera handling.
 
-    Attributes:
-        width           width of image in pixels (need to be divisible by 16)
-        height          height of image in pixels (need to be divisible by 16)
-        fps             number of frames per second
-        initial_delay   time in seconds needed for camera warm up
-        test_frames     test frames that are taken to adjust internal camera parameters
-        awb_mode        white balance mode, possible options are same as for PiCamera.awb_mode
-                        https://picamera.readthedocs.io/en/release-1.13/api_camera.html#picamera.PiCamera.awb_mode
+        Arguments:
+            width           width of image in pixels (need to be divisible by 16)
+            height          height of image in pixels (need to be divisible by 16)
+            fps             number of frames per second
+            initial_delay   time in seconds needed for camera warm up
+            test_frames     test frames that are taken to adjust internal camera parameters
+            awb_mode        white balance mode, possible options are same as for PiCamera.awb_mode
+                            https://picamera.readthedocs.io/en/release-1.13/api_camera.html#picamera.PiCamera.awb_mode
     """
     width: int = 2592
     height: int = 1936
@@ -33,9 +33,10 @@ class Camera(object):
     """
         Wrapper to picamera class, allows passing config object to constructor
         and then convenient usage.
-    Attributes:
-        camera     PiCamera object
-        config  CameraConfig object, all parameters are got from that
+
+        Arguments:
+            camera      PiCamera object
+            config      CameraConfig object, all parameters are got from that
     """
 
     def __init__(self, config: CameraConfig):
@@ -47,6 +48,9 @@ class Camera(object):
         """
             Captures image and convert to OpenCV format.
             Perform rotating if needed.
+
+            Arguments:
+                should_rotate   indicates if image need to be rotated 180 degrees
         """
         image = np.empty((self.config.height * self.config.width * 3,), dtype=np.uint8)
         self.camera.capture(image, 'bgr')
@@ -64,4 +68,5 @@ class Camera(object):
         print("[INFO] Camera is ready!")
 
     def close(self):
+        """ Closes/releases the camera. """
         self.camera.close()

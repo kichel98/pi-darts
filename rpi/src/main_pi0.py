@@ -1,15 +1,6 @@
 from camera import CameraConfig, Camera
-from pi_connector import connect_client_to_server, send_dart_info
+from pi_connector import connect_client_to_server, send_throw_info
 from throw_detector import DetectorConfig, ThrowDetector
-
-"""
-    TODO:
-    - extract all constants (pack into dict?)
-    - adjust all constants (thresholds etc.)
-    - test get_landing_point and uncomment
-    - implement is_contour_dart
-    - general tests (see images at various stages: after diff, after threshold)
-"""
 
 
 def main():
@@ -17,7 +8,7 @@ def main():
     try:
         s = connect_client_to_server()
         cam = Camera(CameraConfig())
-        detector = ThrowDetector(cam, DetectorConfig())
+        detector = ThrowDetector(DetectorConfig())
         previous_frame = cam.take_image()
         while True:
             frame = cam.take_image()
@@ -26,7 +17,7 @@ def main():
                 counter += 1
                 x, y = detector.get_landing_point(cnt)
                 print(x, y)
-                send_dart_info(s, counter, x, y)
+                send_throw_info(s, counter, x, y)
             previous_frame = frame
     finally:
         s.close()
