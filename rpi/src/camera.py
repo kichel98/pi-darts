@@ -28,6 +28,8 @@ class CameraConfig:
     test_frames: int = 10
     awb_mode: str = 'tungsten'
 
+    horizontal_fov = 53.5
+
 
 class Camera(object):
     """
