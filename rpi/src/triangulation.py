@@ -13,7 +13,7 @@ class TriangulationConfig(object):
     right_cam_config: CameraConfig
     down_side_length: float = 74.5
     right_side_length: float = 74.5
-    board_radius: float = 22.5
+    board_radius: float = 22.505
 
 
 class Triangulation(ABC):
