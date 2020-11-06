@@ -11,8 +11,8 @@ class TriangulationConfig(object):
     # TODO: Consult camera thickness.
     down_cam_config: CameraConfig
     right_cam_config: CameraConfig
-    down_side_length: float = 74.5
-    right_side_length: float = 74.5
+    down_side_length: float = 74.5 - 0.9
+    right_side_length: float = 74.5 - 0.9
     board_radius: float = 22.505
 
 

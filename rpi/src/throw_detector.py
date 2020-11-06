@@ -53,7 +53,7 @@ class ThrowDetector(object):
             area = cv2.contourArea(biggest_contour)
             print("Dart detected!")
             print(area)
-            self.save_contour(after, biggest_contour, cv2.contourArea(biggest_contour))
+            # self.save_contour(after, biggest_contour, cv2.contourArea(biggest_contour))
             return True, biggest_contour
         else:
             return False, []

@@ -23,7 +23,7 @@ class CameraConfig:
     """
     width: int = 2592
     height: int = 1936
-    fps = 1
+    fps = 5
     initial_delay: int = 2
     test_frames: int = 10
     awb_mode: str = 'tungsten'
@@ -46,6 +46,14 @@ class Camera(object):
         self.config = config
         self.setup_camera()
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """ Closes/releases the camera. """
+        print("[INFO] Closing the camera")
+        self.camera.close()
+
     def take_image(self, should_rotate=True):
         """
             Captures image and convert to OpenCV format.
@@ -57,6 +65,7 @@ class Camera(object):
         image = np.empty((self.config.height * self.config.width * 3,), dtype=np.uint8)
         self.camera.capture(image, 'bgr')
         image = image.reshape((self.config.height, self.config.width, 3))
+        asdf = 2
         return cv2.rotate(image, cv2.ROTATE_180) if should_rotate else image
 
     def setup_camera(self):
@@ -68,7 +77,3 @@ class Camera(object):
         for _ in range(self.config.test_frames):
             self.take_image(should_rotate=False)
         print("[INFO] Camera is ready!")
-
-    def close(self):
-        """ Closes/releases the camera. """
-        self.camera.close()

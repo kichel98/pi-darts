@@ -1,13 +1,15 @@
+import faulthandler
 from camera import CameraConfig, Camera
-from pi_connector import connect_client_to_server, send_throw_info
+from pi_connector import ClientConnector
 from throw_detector import DetectorConfig, ThrowDetector
+
+faulthandler.enable()
 
 
 def main():
     counter = 0
-    try:
-        s = connect_client_to_server()
-        cam = Camera(CameraConfig())
+    with ClientConnector() as connector, Camera(CameraConfig()) as cam:
+        connector.connect_client_to_server()
         detector = ThrowDetector(DetectorConfig())
         previous_frame = cam.take_image()
         while True:
@@ -17,10 +19,8 @@ def main():
                 counter += 1
                 x, y = detector.get_landing_point(cnt)
                 print(x, y)
-                send_throw_info(s, counter, x, y)
+                connector.send_throw_info(counter, x, y)
             previous_frame = frame
-    finally:
-        s.close()
 
 
 if __name__ == '__main__':
