@@ -15,7 +15,7 @@
 
 % Podstawowe ustawienia języka, według którego formatowany będzie dokument
 \usepackage[polish]{babel}
-
+	
 % Pakiet babel dla polskiego języka powoduje konflikt z pakietem amssymb.
 % Polecenie '\lll' definiują oba pakiety - porządana jest druga definicja.
 \let\lll\undefined
@@ -188,7 +188,7 @@
 		\hrulefill \hspace{16pt} \large Rozdział \thechapter
 		\put(-472.1, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{pwr-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/pwr-logo.png}
 			}
 		}
 		\put(-443,5.5){%
@@ -201,7 +201,7 @@
 		\large Rozdział \thechapter \hspace{16pt} \hrulefill 
 		\put(-22, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{wppt-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/wppt-logo.png}
 			}
 		}
 		\put(-210,5.5){%
@@ -225,7 +225,7 @@
 		\hrulefill \hspace{16pt} \large Dodatek \thechapter
 		\put(-472.1, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{pwr-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/pwr-logo.png}
 			}
 		}
 		\put(-443,5.5){%
@@ -238,7 +238,7 @@
 		\large Bibliografia \hspace{16pt} \hrulefill 
 		\put(-22, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{wppt-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/wppt-logo.png}
 			}
 		}
 		\put(-210,5.5){%
@@ -261,7 +261,7 @@
 		\hrulefill \hspace{16pt} \large Dodatek \thechapter
 		\put(-472.1, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{pwr-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/pwr-logo.png}
 			}
 		}
 		\put(-443,5.5){%
@@ -274,7 +274,7 @@
 		\large Dodatek \thechapter \hspace{16pt} \hrulefill 
 		\put(-22, 12.1){%
 			\makebox(0,0)[l]{%
-				\includegraphics[width=0.05\textwidth]{wppt-logo}
+				\includegraphics[width=0.05\textwidth]{obrazki/wppt-logo.png}
 			}
 		}
 		\put(-210,5.5){%
@@ -353,6 +353,15 @@
 	\bfseries
 }												% formatowanie elementów przed modyfikowanym tytułem
 
+% komenda do wpisywania źródła pod obrazkiem
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\\hspace{\linewidth}%
+    Źródło: #2%
+  }%
+}
+
 % ***************************************************************************************************
 % Linki
 % ***************************************************************************************************
@@ -375,6 +384,7 @@
 
 % ***************************************************************************************************
 % Linki
+
 % ***************************************************************************************************
 
 % Umożliwia zdefiniowanie własnego stylu wyliczeniowego
@@ -406,6 +416,10 @@
 % Dołączanie rysunków
 \usepackage{graphicx}
 
+% Dołączanie SVG
+\usepackage{svg}
+\svgsetup{inkscapelatex=false} % nie konwertuj tekstu używając LaTeXa
+
 % Figury i przypisy
 \usepackage{caption}
 \usepackage{subcaption}
@@ -419,6 +433,7 @@
 % Rozciąganie komórek tabeli na wiele wierszy
 \usepackage{multirow}
 
+
 % Precyzyjne obliczenia szerokości/wysokości dowolnego fragmentu wygenerowanego przez LaTeX
 \usepackage{calc}
 
@@ -431,7 +446,7 @@
 
 % Skrócony symbol liczb naturalnych
 \newcommand{\NN}{\mathbb{N}}
-
+ 
 % Skrócony symbol liczb wymiernych
 \newcommand{\QQ}{\mathbb{Q}}
 
@@ -525,7 +540,7 @@
 % dane promotora
 				\put(200,60){\makebox(0,0)[l]{\large dr. hab. Marcina Zawady}}
 				
-				\put(115,-70){\includegraphics[width=0.15\textwidth]{pwr}}
+				\put(115,-70){\includegraphics[width=0.15\textwidth]{obrazki/pwr.png}}
 				\put(106,-80){\makebox(0,0)[bl]{\large \textsc{Wrocław 2020}}}
 			\end{picture}
 		\end{center}	
@@ -575,6 +590,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\nocite{*} % wypisz wszystkie elementy z pliku .bib, niecytowane również
 
 	\pagestyle{bibliographyStyle}
 	\bibliographystyle{plabbrv}

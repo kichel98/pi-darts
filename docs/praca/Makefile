@@ -1,5 +1,8 @@
 all:
-	pdflatex praca
+	pdflatex --shell-escape praca
 	bibtex praca
-	pdflatex praca
-	pdflatex praca
+	pdflatex --shell-escape praca
+	pdflatex --shell-escape praca
+
+clean:
+	rm *.aux *.bbl *.blg *.log *.out *.toc svg-inkscape -r
