@@ -56,6 +56,9 @@
 % Fixes/improves amsmath
 \usepackage{mathtools}
 
+% Dodanie np. znaku stopni(°)
+\usepackage{gensymb}
+
 
 % ***************************************************************************************************
 % Kolory  
@@ -478,6 +481,9 @@
 % Środowisko do definicji
 \newtheorem{definition}{Definicja}[chapter]
 
+% Środowisko do pytań
+\newtheorem{question}{Pytanie}[chapter]
+
 % Środowisko do dowodów
 \newenvironment{proof}{
 	\par\noindent \textbf{Dowód.}
@@ -538,7 +544,7 @@
 				\put(200,100){\makebox(0,0)[l]{\large Praca inżynierska napisana}}
 				\put(200,80){\makebox(0,0)[l]{\large pod kierunkiem}}
 % dane promotora
-				\put(200,60){\makebox(0,0)[l]{\large dr. hab. Marcina Zawady}}
+				\put(200,60){\makebox(0,0)[l]{\large dr. Marcina Zawady}}
 				
 				\put(115,-70){\includegraphics[width=0.15\textwidth]{obrazki/pwr.png}}
 				\put(106,-80){\makebox(0,0)[bl]{\large \textsc{Wrocław 2020}}}

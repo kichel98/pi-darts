@@ -1,3 +1,9 @@
 .idea/
 rpi/test/test-images/
 docs/praca/svg-inkscape/
+docs/praca/*.aux
+docs/praca/*.bbl
+docs/praca/*.blg
+docs/praca/*.log
+docs/praca/*.out
+docs/praca/*.toc
