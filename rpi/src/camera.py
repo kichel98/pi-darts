@@ -65,7 +65,6 @@ class Camera(object):
         image = np.empty((self.config.height * self.config.width * 3,), dtype=np.uint8)
         self.camera.capture(image, 'bgr')
         image = image.reshape((self.config.height, self.config.width, 3))
-        asdf = 2
         return cv2.rotate(image, cv2.ROTATE_180) if should_rotate else image
 
     def setup_camera(self):
