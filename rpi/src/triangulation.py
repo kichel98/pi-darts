@@ -59,6 +59,8 @@ class InterpolatedTriangulation(Triangulation):
         return x + self.config.board_radius, self.config.right_side_length - y
 
     def _interpolate_angle(self, cam_y, cam_config):
+        # TODO: you should state which point of pixel represents it:
+        # left border, right border or center
         absolute_angle = cam_y * cam_config.horizontal_fov / cam_config.width
         return absolute_angle - (cam_config.horizontal_fov / 2)
 
