@@ -158,3 +158,83 @@ Na podstawie tej wartości ustalono wymiary całego stelaża. Najmniejsze możli
 
 \begin{gather*}
 \end{gather*}
+
+\section{Obliczenia}
+% TODO: zmienić tytuł
+Zgodnie z wcześniej przedstawioną ideą, rozwiązanie zostało oparte na stworzeniu trójkąta z dwoma znanymi kątami i jednym znanym bokiem, co pozwala później na obliczenie wszystkich boków trójkąta. Zobrazowane jest to na rysunku \ref{stelaz_trojkat}, do którego kolejne części pracy często będą nawiązywać. Wspomnianym trójkątem jest $\triangle ABP$. $A$ i $B$ to położenia kamer, a $P$ to miejsce wbicia rzutki, które jest celem obliczeń. Kąty $\gamma$ i $\delta$ obliczane są na podstawie pozycji pikseli, a odległość pomiędzy kamerami jest znana i równa $|AB| = |AC|\sqrt{2} = d\sqrt{2}$.
+
+\begin{figure}[h!]
+\begin{center}
+\includesvg[width=0.5\textwidth]{obrazki/stelaz_trojkat.svg}
+\end{center}
+\captionsource{{\color{dgray}Szukany trójkąt w układzie stelaża}}{Opracowanie własne}
+\label{stelaz_trojkat}
+\end{figure} 
+
+Oto etapy obliczeń, składających się na rozwiązanie głównego problemu:
+\begin{itemize}
+  \item uzyskanie pozycji piksela, który reprezentuje miejsce wbicia rzutki (dla każdej z kamer)
+  \item obliczenie (ze współrzędnych piksela) kąta pomiędzy kamerą a rzutką  (dla każdej z kamer)
+  \item umiejscowienie kątów w układzie związanym z kamerami, sformułowanie trójkąta kamera-kamera-rzutka
+  \item obliczenie nieznanych kątów i boków trójkąta
+  \item obliczenie pozycji $(x, y)$ rzutki, a następnie zamiana układu odniesienia na taki, gdzie $(0, 0)$ to lewy górny róg stelaża
+  \item zamiana współrzędnych kartezjańskich na biegunowe
+  \item przyporządkowanie współrzędnych biegunowych $(r, \varphi)$ do pola punktowego (segmentu) na tarczy
+\end{itemize}
+
+% TODO: sprecyzuj, co to za kąty (te z kamery), bo to co napisałeś, to nie do końca prawda
+
+Pierwszą fazą analizy rzutu jest przetwarzanie obrazu, którego wynikiem są dane o dwóch pikselach, uznanych za miejsce wbicia lotki, po jednym przez każdą z kamer. Jest to trudne zadanie, które zostanie szerzej omówione w następnym rozdziale. 
+
+Obliczenie kąta pomiędzy kamerą a rzutką jest oparte na prostym założeniu, iż kamera liniowo dystrybuuje miejsce na zdjęciu w stosunku do kąta, pod jakim znajduje się punkt. Oznacza to, że piksele wysunięte najbardziej na lewo odpowiadają kątowi zerowemu, najbardziej na prawo -- maksymalnemu kątowi widzenia kamery ($\alpha$), a wszystkie pomiędzy nimi są proporcjonalnie mniejsze lub większe (liniowa interpolacja). Założenie jest dość silne, ponieważ przy niektórych obiektywach, np. typu rybie oko, fragmenty położone przy brzegach obrazu są w innym stopniu powiększone, niż te, które są bliskie środka (dystorsja). W takich przypadkach przyjęcie takiego założenia skutkowałoby dużymi błędami. 
+
+Dla zdjęcia o wymiarach $w \times h$ pikseli, zrobionego przez kamerę o kącie widzenia $\alpha$, na którym rozważany jest piksel o pozycji $(x, y)$, zachodzi proporcja:
+
+$$
+\frac{x}{w} = \frac{\beta}{\alpha}
+$$ gdzie $\beta$ oznacza kąt od kamery do rzutki. 
+% TODO: może zmienić z w na w-1?
+Stąd:
+$$
+\beta = \frac{x \cdot \alpha}{w}
+$$
+Warto zauważyć, że wartość $y$ nie ma w tej sytuacji znaczenia, wpływ na wynik ma tylko pozycja na osi poziomej. Na rysunku \ref{zdjecie_interpolacja} pokazana jest siatka pikseli z oznaczeniami rzędów i kolumn, wraz z zaznaczonym pojedynczym pikselem. Rysunek \ref{kat_interpolacja} przedstawia, jaką informację udaje się otrzymać na podstawie pozycji owego piksela -- kąt $\beta$.
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includesvg[width=.8\linewidth]{obrazki/zdjecie_interpolacja.svg}
+  \caption{siatka pikseli}
+  \label{zdjecie_interpolacja}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includesvg[width=.6\linewidth]{obrazki/kat_interpolacja.svg}
+  \caption{przybliżony kąt}
+  \label{kat_interpolacja}
+\end{subfigure}
+\captionsource{{\color{dgray}Użycie współrzędnych piksela do wyznaczenia kąta}}{Opracowanie własne.}
+\end{figure}
+
+Jednak otrzymany kąt $\beta$ nie odpowiada na razie kątom zaznaczonym na rysunku \ref{stelaz_trojkat}. Należy go poddać jeszcze niewielkim transformacjom. 
+\begin{align*}
+\gamma &=  45\degree - (\beta_A - \frac{\alpha}{2}) \\
+\delta &=  45\degree + \beta_B - \frac{\alpha}{2},
+\end{align*}
+gdzie $\beta_A, \beta_B$ to kąty $\beta$ odpowiednio dla kamery $A$ i $B$.
+
+Aby zrozumieć powyższe przekształcenia, dobrze jest posłużyć się przykładem, gdy punkt $P$ znajduje się dokładnie na środku tarczy. Wtedy trójkąt $ABP$ jest równoramiennym trójkątem prostokątnym, a więc $\gamma = \delta = 45\degree$, lecz $\beta_A = \beta_B = \frac{\alpha}{2}$. Należy przyjąć tę sytuację jako sytuację wyjściową do kolejnych obliczeń. Dlatego pierwszym krokiem jest zmiana zbioru wartości, które przyjmuje $\beta$: zakres, zamiast od $0$ do $\alpha$, powinien wynosić od $-\frac{\alpha}{2}$ do $\frac{\alpha}{2}$. Ta zmiana dokonuje się przez odjęcie od wyliczonego kąta wartości $\frac{\alpha}{2}$. Jest to teraz kąt nie od lewego ramienia do prostej przecinającej punkt $P$, lecz od prostej biegnącej przez środek obrazu do prostej przecinającej punkt $P$. Dzięki temu, dla punktu z przykładu, kąt wynosi $0\degree$, ponieważ znajduje się dokładnie na wprost kamery. Kolejną zależnością, którą należy uwzględnić, jest fakt, iż im większy jest kąt $\beta_A$, tym mniejszy jest kąt $\gamma$. Stąd wynika konieczność zmiany znaku kąta dla kamery $A$, przez co pierwszy (licząc od lewej) piksel będzie oznaczał kąt $\frac{\alpha}{2}$, a ostatni $-\frac{\alpha}{2}$ (a nie odwrotnie). Dla kamery $B$ nie ma potrzeby takiej zamiany: im większy kąt $\beta_B$, tym większy kąt $\delta$. Po przedstawionych transformacjach należy dodać jeszcze $45 \degree$, tak by punkt znajdujący się na wprost kamery był ostatecznie interpretowany jako $45 \degree$.
+
+Dzięki powyższym obliczeniom, dostępne są wszystkie dane potrzebne do jednoznacznego wyznaczenia trójkąta $ABP$. Jego trzeci kąt można obliczyć, korzystając z własności, że suma kątów w trójkącie wynosi $180\degree$:
+$$
+\measuredangle APB = \varepsilon = 180\degree - \gamma - \delta
+$$
+Długości boków uzyskuje się za pomocą twierdzenia sinusów:
+\begin{gather*}
+\frac{|AB|}{\sin\varepsilon} = \frac{|BP|}{\sin\gamma} = \frac{|AP|}{\sin\delta} \\[1em]
+|BP| = \frac{|AB| \cdot \sin\gamma}{\sin\varepsilon} \\[1em]
+|AP| = \frac{|AB| \cdot \sin\delta}{\sin\varepsilon}
+\end{gather*}
+

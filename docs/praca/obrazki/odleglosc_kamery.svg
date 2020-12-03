@@ -68,8 +68,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.1767767"
-     inkscape:cx="1102.9177"
-     inkscape:cy="2183.1465"
+     inkscape:cx="3407.869"
+     inkscape:cy="1522.092"
      inkscape:document-units="cm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -143,7 +143,7 @@
        transform="matrix(3.2871933,0,0,3.2871933,-107.68983,-202.04099)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0264583"
+         style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0264583;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
          x="46.897388"
          y="69.003326"
          id="text1356"><tspan
@@ -151,10 +151,10 @@
            id="tspan1354"
            x="46.897388"
            y="69.003326"
-           style="stroke-width:0.0264583">𝛼</tspan></text>
+           style="stroke-width:0.0264583;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">𝛼</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:0.842532px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0210632"
+         style="font-style:normal;font-weight:normal;font-size:0.842532px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0210632;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
          x="46.96611"
          y="70.020554"
          id="text1360"><tspan
@@ -162,7 +162,7 @@
            id="tspan1358"
            x="46.96611"
            y="70.020554"
-           style="stroke-width:0.0210632">2</tspan></text>
+           style="stroke-width:0.0210632;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">2</tspan></text>
       <path
          style="fill:none;stroke:#000000;stroke-width:0.0264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 46.712181,69.214991 h 1.005417"
@@ -173,7 +173,7 @@
        transform="matrix(3.2871933,0,0,3.2871933,-102.59691,-202.04114)">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0264583"
+         style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0264583;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
          x="46.897388"
          y="69.003326"
          id="text1373"><tspan
@@ -181,10 +181,10 @@
            id="tspan1371"
            x="46.897388"
            y="69.003326"
-           style="stroke-width:0.0264583">𝛼</tspan></text>
+           style="stroke-width:0.0264583;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">𝛼</tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:0.842532px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0210632"
+         style="font-style:normal;font-weight:normal;font-size:0.842532px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0210632;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
          x="46.96611"
          y="70.020554"
          id="text1377"><tspan
@@ -192,7 +192,7 @@
            id="tspan1375"
            x="46.96611"
            y="70.020554"
-           style="stroke-width:0.0210632">2</tspan></text>
+           style="stroke-width:0.0210632;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">2</tspan></text>
       <path
          style="fill:none;stroke:#000000;stroke-width:0.0264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 46.712181,69.214991 h 1.005417"
@@ -200,7 +200,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.23351px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0808379"
+       style="font-style:normal;font-weight:normal;font-size:3.23351px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0808379;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="51.31234"
        y="14.735303"
        id="text1385"><tspan
@@ -208,10 +208,10 @@
          id="tspan1383"
          x="51.31234"
          y="14.735303"
-         style="stroke-width:0.0808379">P(0, d)</tspan></text>
+         style="stroke-width:0.0808379;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">P(0, d)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.98442px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0746098"
+       style="font-style:normal;font-weight:normal;font-size:2.98442px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0746098;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="50.968452"
        y="58.456703"
        id="text1389"><tspan
@@ -219,7 +219,7 @@
          id="tspan1387"
          x="50.968452"
          y="58.456703"
-         style="stroke-width:0.0746098">O(0,0)</tspan></text>
+         style="stroke-width:0.0746098;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">O(0,0)</tspan></text>
     <circle
        style="fill:#000000;stroke:#000000;stroke-width:0.0828049;stroke-miterlimit:4;stroke-dasharray:none"
        id="path1336-0"
@@ -262,7 +262,7 @@
        r="0.55951744" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.95471px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.098868"
+       style="font-style:normal;font-weight:normal;font-size:3.95471px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.098868;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="20.631958"
        y="58.836746"
        id="text1461"><tspan
@@ -270,10 +270,10 @@
          id="tspan1459"
          x="20.631958"
          y="58.836746"
-         style="stroke-width:0.098868">A</tspan></text>
+         style="stroke-width:0.098868;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.95483px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0988724"
+       style="font-style:normal;font-weight:normal;font-size:3.95483px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0988724;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="76.646568"
        y="58.68718"
        id="text1465"><tspan
@@ -281,10 +281,10 @@
          id="tspan1463"
          x="76.646568"
          y="58.68718"
-         style="stroke-width:0.0988724">B</tspan></text>
+         style="stroke-width:0.0988724;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.55899px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0889751"
+       style="font-style:normal;font-weight:normal;font-size:3.55899px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0889751;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="34.188652"
        y="37.072586"
        id="text1469"><tspan
@@ -292,10 +292,10 @@
          id="tspan1467"
          x="34.188652"
          y="37.072586"
-         style="stroke-width:0.0889751">l</tspan></text>
+         style="stroke-width:0.0889751;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">l</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.47096px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.111774"
+       style="font-style:normal;font-weight:normal;font-size:4.47096px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.111774;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="64.048576"
        y="37.083939"
        id="text1473"><tspan
@@ -303,10 +303,10 @@
          id="tspan1471"
          x="64.048576"
          y="37.083939"
-         style="stroke-width:0.111774">m</tspan></text>
+         style="stroke-width:0.111774;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">m</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.55856px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0889639"
+       style="font-style:normal;font-weight:normal;font-size:3.55856px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0889639;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="38.986706"
        y="63.813046"
        id="text891"><tspan
@@ -314,6 +314,6 @@
          id="tspan889"
          x="38.986706"
          y="63.813046"
-         style="stroke-width:0.0889639">r</tspan></text>
+         style="stroke-width:0.0889639;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">r</tspan></text>
   </g>
 </svg>

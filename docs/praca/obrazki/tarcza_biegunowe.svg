@@ -261,37 +261,44 @@
     <text
        xml:space="preserve"
        id="text1385"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1387);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1387);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(2.2364755,0,0,2.2364755,-31.372459,-28.663933)"><tspan
          x="25.394531"
-         y="23.563327"><tspan>φ</tspan></tspan></text>
+         y="23.612258"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">φ</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1391"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1393);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1393);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(3.1920268,0,0,3.1920268,-46.968568,-40.32239)"><tspan
          x="21.439453"
-         y="19.213718"><tspan>r</tspan></tspan></text>
+         y="19.262649"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">r</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1397"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1399);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1399);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(2.529344,0,0,2.529344,-34.38454,-18.523125)"><tspan
          x="22.869141"
-         y="12.674655"><tspan>P(r, </tspan><tspan>φ</tspan><tspan>)</tspan></tspan></text>
+         y="12.723587"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">P(r, </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">φ</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">)</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1403"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1405);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1405);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(2.6197258,0,0,2.6197258,-35.519808,-40.881286)"><tspan
          x="22.460938"
-         y="26.268405"><tspan>O</tspan></tspan></text>
+         y="26.317337"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">O</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1409"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1411);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1411);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(2.4860536,0,0,2.4860536,-69.443154,-39.210466)"><tspan
          x="46.273438"
-         y="27.057468"><tspan>S</tspan></tspan></text>
+         y="27.106399"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">S</tspan></tspan></text>
   </g>
 </svg>

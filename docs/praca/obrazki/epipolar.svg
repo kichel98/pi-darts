@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="719.77198"
-     inkscape:cy="315.13746"
+     inkscape:zoom="1.4"
+     inkscape:cx="328.32646"
+     inkscape:cy="221.5623"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -127,8 +127,8 @@
            id="tspan891"
            x="77.832504"
            y="188.04218"
-           style="stroke-width:0.179667">C<tspan
-   style="font-size:4.6712px;baseline-shift:sub;stroke-width:0.179667"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.179667">C<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.6712px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub;stroke-width:0.179667"
    id="tspan895">L</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -140,8 +140,8 @@
            id="tspan891-0"
            x="222.11063"
            y="187.96779"
-           style="stroke-width:0.179667">C<tspan
-   style="font-size:4.67119px;baseline-shift:sub;stroke-width:0.179667"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.179667">C<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.67119px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub;stroke-width:0.179667"
    id="tspan895-6">R</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -153,10 +153,10 @@
            id="tspan918"
            x="100.56821"
            y="165.57007"
-           style="stroke-width:0.157496">P<tspan
-   style="font-size:4.0948px;baseline-shift:sub;stroke-width:0.157496"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.157496">P<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.0948px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub;stroke-width:0.157496"
    id="tspan922">L</tspan><tspan
-   style="font-size:4.0948px;baseline-shift:super;stroke-width:0.157496"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.0948px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:super;stroke-width:0.157496"
    id="tspan924">'</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -168,10 +168,10 @@
            id="tspan918-2"
            x="204.35971"
            y="162.38445"
-           style="stroke-width:0.157496">P<tspan
-   style="font-size:4.0948px;baseline-shift:sub;stroke-width:0.157496"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.157496">P<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.0948px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub;stroke-width:0.157496"
    id="tspan922-5">R</tspan><tspan
-   style="font-size:4.0948px;baseline-shift:super;stroke-width:0.157496"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.0948px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:super;stroke-width:0.157496"
    id="tspan924-3">'</tspan></tspan></text>
       <text
          xml:space="preserve"
@@ -183,7 +183,7 @@
            id="tspan950"
            x="136.0961"
            y="106.24482"
-           style="stroke-width:0.182268">P</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.182268">P</tspan></text>
     </g>
   </g>
 </svg>

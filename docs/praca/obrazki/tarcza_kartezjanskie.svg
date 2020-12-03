@@ -13,7 +13,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="tarcza_xy.svg">
+   sodipodi:docname="tarcza_kartezjanskie.svg">
   <defs
      id="defs2">
     <rect
@@ -141,7 +141,7 @@
        r="0.24133903" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:1.78603px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0446506"
+       style="font-style:normal;font-weight:normal;font-size:1.78603px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0446506;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="0.18539086"
        y="1.6242143"
        id="text1655"><tspan
@@ -149,7 +149,7 @@
          id="tspan1653"
          x="0.18539086"
          y="1.6242143"
-         style="stroke-width:0.0446506">(0,0)</tspan></text>
+         style="stroke-width:0.0446506;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">(0,0)</tspan></text>
     <circle
        style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.330737;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1659"
@@ -167,18 +167,19 @@
     <text
        xml:space="preserve"
        id="text1671"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.54px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect1673);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.54px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect1673);fill:#000000;fill-opacity:1;stroke:none;"
        transform="translate(-0.47272013,-0.21009785)"><tspan
          x="21.507812"
-         y="16.796133"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.54px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">(x, y)</tspan></tspan></text>
+         y="16.913568"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.54px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">(x, y)</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1677"
-       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1679);fill:#000000;fill-opacity:1;stroke:none;"
+       style="font-style:normal;font-weight:normal;font-size:1.05833px;line-height:1.25;font-family:'Latin Modern Math';white-space:pre;shape-inside:url(#rect1679);fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        transform="matrix(2.2469535,0,0,2.2469535,-26.850417,-2.4868766)"><tspan
          x="21.535156"
-         y="1.9344209"><tspan>x</tspan></tspan></text>
+         y="1.9833522"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'">x</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text1683"
@@ -188,7 +189,7 @@
          y="15.19614"><tspan>y</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.18516px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0546293"
+       style="font-style:normal;font-weight:normal;font-size:2.18516px;line-height:1.25;font-family:'Latin Modern Math';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0546293;-inkscape-font-specification:'Latin Modern Math';font-stretch:normal;font-variant:normal;"
        x="0.63159204"
        y="14.103436"
        id="text1691"><tspan
@@ -196,6 +197,6 @@
          id="tspan1689"
          x="0.63159204"
          y="14.103436"
-         style="stroke-width:0.0546293">y</tspan></text>
+         style="stroke-width:0.0546293;-inkscape-font-specification:'Latin Modern Math';font-family:'Latin Modern Math';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">y</tspan></text>
   </g>
 </svg>
