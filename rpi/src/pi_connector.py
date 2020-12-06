@@ -1,7 +1,7 @@
 import socket
 
-DEFAULT_IP = "192.168.1.51"
-DEFAULT_PORT = 1234
+DEFAULT_IP = "192.168.1.52"
+DEFAULT_PORT = 1235
 
 
 class ServerConnector(object):

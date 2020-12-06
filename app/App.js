@@ -1,9 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { G, Circle, Path } from "react-native-svg"
 
 export default function App() {
+  const [segment, setSegment] = useState("not detected");
+  useEffect(() => {
+    const socket = new WebSocket('ws://192.168.1.52:4321');
+    socket.onopen = () => {
+      console.log("opened!")
+    };
+    socket.onopen = () => {
+      console.log("closed!")
+    };
+    socket.onmessage = e => {
+      console.log(segment);
+      setSegment(e.data);
+    };
+  }, []);
   // converted from assets/tarcza_kontury.svg by https://react-svgr.com/playground/?native=true
   return (
     <View style={styles.container}>
@@ -28,7 +42,7 @@ export default function App() {
           />
         </G>
       </Svg>
-      <Text style={{ fontSize: 20 }}>Punkty za ostatni rzut: 10</Text>
+      <Text style={{ fontSize: 20 }}>Punkty za ostatni rzut: {segment}</Text>
     </View>
   );
 }
