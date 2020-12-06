@@ -23,7 +23,7 @@ Urządzeniem, które jest w stanie dostarczać optyczne odzwierciedlenia ogranic
 \label{camera_obscura}
 \end{figure} 
 
-W schematach (zwłaszcza związanych z grafiką komputerową) często przedstawia się powyższy model w uproszczonej formie, gdzie obraz tworzy się pomiędzy środkiem aparatu (otworem) a fotografowanym obiektem \cite{Pinhole_MSc}. Przykład takiego schematu jest widoczny na rysunku \ref{pinhole_model}. Osie $XYZ$ reprezentują trójwymiarowy układ współrzędnych, którego początkiem jest środek aparatu, oznaczony jako $C$. W tym samym układzie jest fotografowany obiekt (punkt), zaznaczony literą $P$. W odległości $f$ od środka kamery, zwanej jako ogniskowa, znajduje się fragment płaszczyzny, nazywanej płaszczyzną obrazu (eng. \textit{image plane}), na której powstaje obraz. Oś $Z$ jest do niej prostopadła i przechodzi przez jej środek. Z płaszczyzną związany jest dwuwymiarowy układ współrzędnych. Odzwierciedleniem punktu $P$ na obrazie jest punkt $P'$. Powstaje on na skutek przecięcia się półprostej (eng. \textit{ray}, na rysunku jako $r$) przechodzącej przez środek kamery i punkt $P$ z płaszczyzną obrazu. Jest to analogia do pojedynczego promienia światła, które wpada przez otwór w aparacie otworkowym. Ponieważ trójwymiarowe punkty są przedstawiane w dwuwymiarowym układzie, tracimy informacje o głębokości, a punkt na obrazie reprezentuje nieskończoną liczbę punktów znajdujących się na prostej $r$.
+W schematach (zwłaszcza związanych z grafiką komputerową) często przedstawia się powyższy model w uproszczonej formie, gdzie obraz tworzy się pomiędzy środkiem aparatu (otworem) a fotografowanym obiektem \cite{Pinhole_MSc}. Przykład takiego schematu jest widoczny na rysunku \ref{pinhole_model}. Osie $XYZ$ reprezentują trójwymiarowy układ współrzędnych, którego początkiem jest środek aparatu, oznaczony jako $C$. W tym samym układzie jest fotografowany obiekt (punkt), zaznaczony literą $P$. W odległości $f$ od środka kamery, zwanej jako ogniskowa, znajduje się fragment płaszczyzny, nazywanej płaszczyzną obrazu (eng. \textit{image plane}), na której powstaje obraz. Oś $Z$ jest do niej prostopadła i przechodzi przez jej środek. Z płaszczyzną związany jest dwuwymiarowy układ współrzędnych. Odzwierciedleniem punktu $P$ na obrazie jest punkt $P'$. Powstaje on na skutek przecięcia się półprostej (eng. \textit{ray}, na rysunku jako $r$) przechodzącej przez środek kamery i punkt $P$ z płaszczyzną obrazu. Jest to analogia do pojedynczego promienia światła, które wpada przez otwór w aparacie otworkowym. Ponieważ trójwymiarowe punkty są przedstawiane w dwuwymiarowym układzie, tracone są informacje o głębokości, a punkt na obrazie reprezentuje nieskończoną liczbę punktów znajdujących się na prostej $r$.
 
 \begin{figure}[h!]
 \begin{center}
@@ -115,7 +115,7 @@ Półproste $l$ i $m$ przecinają się w punkcie $P(0, d)$:
 a_1 \cdot 0 + b_1 = a_2 \cdot 0 + b_2 \\
 b_1 = b_2 = d
 \end{gather*}
-Proste przecinają się z osią $OY$ w tym samym punkcie, więc mają ten sam wyraz wolny, równy $d$.
+Proste przecinają się z osią $OY$ w tym sam punkcie, więc mają ten sam wyraz wolny, równy $d$.
 \begin{gather*}
 l: y = \tan (\frac{\pi - \alpha}{2})x + d \\
 m: y = \tan (\frac{\pi + \alpha}{2})x + d
@@ -161,7 +161,7 @@ Na podstawie tej wartości ustalono wymiary całego stelaża. Najmniejsze możli
 
 \section{Obliczenia}
 % TODO: zmienić tytuł
-Zgodnie z wcześniej przedstawioną ideą, rozwiązanie zostało oparte na stworzeniu trójkąta z dwoma znanymi kątami i jednym znanym bokiem, co pozwala później na obliczenie wszystkich boków trójkąta. Zobrazowane jest to na rysunku \ref{stelaz_trojkat}, do którego kolejne części pracy często będą nawiązywać. Wspomnianym trójkątem jest $\triangle ABP$. $A$ i $B$ to położenia kamer, a $P$ to miejsce wbicia rzutki, które jest celem obliczeń. Kąty $\gamma$ i $\delta$ obliczane są na podstawie pozycji pikseli, a odległość pomiędzy kamerami jest znana i równa $|AB| = |AC|\sqrt{2} = d\sqrt{2}$.
+Zgodnie z wcześniej przedstawioną ideą, rozwiązanie zostało oparte na stworzeniu trójkąta z dwoma znanymi kątami i jednym znanym bokiem, co pozwala później na obliczenie wszystkich boków trójkąta. Zobrazowane jest to na rysunku \ref{stelaz_trojkat}, do którego kolejne części pracy często będą nawiązywać. Wspomnianym trójkątem jest $\triangle ABP$. $A$ i $B$ to położenia kamer, a $P$ to miejsce wbicia rzutki, które jest celem obliczeń. Kąty $\gamma$ i $\delta$ obliczane są na podstawie pozycji pikseli, a odległość pomiędzy kamerami jest znana lub łatwa do obliczenia z twierdzenia Pitagorasa w $\triangle ABC$.
 
 \begin{figure}[h!]
 \begin{center}
@@ -177,7 +177,7 @@ Oto etapy obliczeń, składających się na rozwiązanie głównego problemu:
   \item obliczenie (ze współrzędnych piksela) kąta pomiędzy kamerą a rzutką  (dla każdej z kamer)
   \item umiejscowienie kątów w układzie związanym z kamerami, sformułowanie trójkąta kamera-kamera-rzutka
   \item obliczenie nieznanych kątów i boków trójkąta
-  \item obliczenie pozycji $(x, y)$ rzutki, a następnie zamiana układu odniesienia na taki, gdzie $(0, 0)$ to lewy górny róg stelaża
+  \item obliczenie pozycji $(x, y)$ rzutki, a następnie zamiana układu odniesienia na taki, gdzie $(0, 0)$ to środek tarczy
   \item zamiana współrzędnych kartezjańskich na biegunowe
   \item przyporządkowanie współrzędnych biegunowych $(r, \varphi)$ do pola punktowego (segmentu) na tarczy
 \end{itemize}
@@ -238,3 +238,68 @@ Długości boków uzyskuje się za pomocą twierdzenia sinusów:
 |AP| = \frac{|AB| \cdot \sin\delta}{\sin\varepsilon}
 \end{gather*}
 
+Na podstawie danych o trójkącie $ABP$, należy obliczyć pozycję punktu $P$, umieszczając trójkąt w układzie współrzędnych, w którym punkt $A$ jest początkiem. Szkic pomocniczy znajduje się na rysunku \ref{trojkat_kartezjanskie}. Pozycja punktu B jest określona przy tworzeniu stelaża -- najczęściej będzie to $(d, d)$, jednak w poniższych obliczeniach zakłada się ogólniejszy przypadek, gdzie współrzędne punktu na obu osiach nie muszą się sobie równać. Przyjęto oznaczenie $B(w, h)$. Jedynymi szukanymi w tym podproblemie są $x$ oraz $y$, czyli współrzędne punktu $P$. Obliczenia opierają się na działaniach wektorowych: wyznacza się wektor $\overrightarrow{AP} = \overrightarrow{b}$ oraz $\overrightarrow{AB} = \overrightarrow{a}$.
+
+\begin{figure}[h!]
+\begin{center}
+\includesvg[width=0.5\textwidth]{obrazki/trojkat_kartezjanskie.svg}
+\end{center}
+\captionsource{{\color{dgray}Układ współrzędnych o środku w $A$}}{Opracowanie własne}
+\label{trojkat_kartezjanskie}
+\end{figure} 
+
+Główne równanie wynika z wzoru na kąt między wektorami:
+\begin{gather*}
+\cos \gamma = \frac{\vec{a}\circ\vec{b}}{|\vec{a}|\cdot |\vec{b}|} = \frac{[w, h]\circ[x, y]}{|\vec{a}|\cdot |\vec{b}|} = \frac{wx + hy}{|\vec{a}|\cdot |\vec{b}|} \\[1em]
+|\vec{a}|\cdot |\vec{b}| \cos \gamma = wx + hy \\[1em]
+x = \frac{|\vec{a}|\cdot |\vec{b}| \cos \gamma - hy}{w}
+\end{gather*}
+Drugą zależnością, z której należy skorzystać, jest wzór na długość wektora:
+\begin{align*}
+|\vec{b}| &= \sqrt{x^2 + y^2} \\
+|\vec{b}|^2 &= x^2 + y^2
+\end{align*}
+Podstawienie:
+\begin{align*}
+|\vec{b}|^2 &= \left(\frac{|\vec{a}|\cdot |\vec{b}| \cos \gamma - hy}{w}\right)^2 + y^2 \\ 
+|\vec{b}|^2 &= \frac{(|\vec{a}|\cdot |\vec{b}| \cos \gamma - hy)^2}{w^2} + y^2 \\ 
+|\vec{b}|^2 &= \frac{1}{w^2}\left(|\vec{a}|^2\cdot |\vec{b}|^2 \cos^2 \gamma - 2|\vec{a}|\cdot |\vec{b}|h \cos \gamma\ y + h^2 y^2\right) + y^2 \\ 
+|\vec{b}|^2 &= \frac{1}{w^2}|\vec{a}|^2\cdot |\vec{b}|^2 \cos^2 \gamma - \frac{2}{w^2}|\vec{a}|\cdot |\vec{b}|h \cos \gamma\ y + \left(1 + \frac{h^2}{w^2}\right) y^2 \\
+\bigg(1 &+ \frac{h^2}{w^2}\bigg)  y^2 - \frac{2}{w^2}|\vec{a}|\cdot |\vec{b}|h \cos \gamma\ y + |\vec{b}|^2\left(\frac{|\vec{a}|^2 \cos^2 \gamma}{w^2} - 1 \right) = 0
+\end{align*}
+Otrzymano równanie kwadratowe postaci $a_2y^2 + a_1y + a_0$, gdzie:
+\begin{align*}
+a_2 &= 1 + \frac{h^2}{w^2} \\
+a_1 &= -\frac{2}{w^2}|\vec{a}|\cdot |\vec{b}|h \cos \gamma \\
+a_0 &= |\vec{b}|^2\left(\frac{|\vec{a}|^2 \cos^2 \gamma}{w^2} - 1 \right)
+\end{align*}
+Wzory na pierwiastki tego równania nie są podawane, ponieważ również w implementacji korzysta się z zewnętrznej biblioteki do wyliczania pierwiastków, odpornej na błędy numeryczne. W przypadku, gdy równanie ma dwa rozwiązania, wybierane jest $y >0$.
+
+Pierwsza współrzędna obliczana z wcześniej już przedstawionego wzoru:
+$$
+x = \frac{|\vec{a}|\cdot |\vec{b}| \cos \gamma - hy}{w}
+$$
+
+Następnie należy przenieść układ współrzędnych w taki sposób, by jego początkiem był środek tarczy. Przekształceniem, które to zapewnia, jest funkcja $f$:
+$$
+f(x, y) = (x, y + h)
+$$
+
+W celu łatwiejszego przyporządkowania pozycji rzutki do pola na tarczy, warto przedstawić ją za pomocą współrzędnych biegunowych, tzn. promienia $r_p$ od środka tarczy ($O$) do punktu $P$ oraz kąta $\varphi$ pomiędzy półprostą $OB$ a wektorem $\overrightarrow{OP}$. \newline
+Promień $r_p$ wyliczany jest ze wzoru na długość wektora (z tw. Pitagorasa):
+$$
+r_p = \sqrt{x^2 + y^2}
+$$
+Wzór na wartość kąta $\varphi$ jest zależny od ćwiartki układu, w jakiej znajduje się punkt:
+$$
+\varphi = 
+     \begin{cases}
+       arctg(\frac{y}{x}) &\quad\text{gdy } x > 0 \land y \ge 0 \\
+       arctg(\frac{y}{x}) + 2\pi &\quad\text{gdy } x > 0 \land y < 0 \\
+       arctg(\frac{y}{x})+ \pi &\quad\text{gdy } x < 0 \\
+       \frac{\pi}{2} &\quad\text{gdy } x = 0 \land y > 0 \\ 
+       \frac{3\pi}{2} &\quad\text{gdy } x = 0 \land y < 0
+     \end{cases}
+$$
+
+Ostatnim etapem jest przypisanie współrzędnym biegunowym konkretnego pola na tarczy. Patrząc na kołową budowę tarczy łatwo zauważyć, że kąt $\varphi$ wskazuje, w który wycinek kołowy trafiła rzutka, a promień $r_p$ pozwala określić, czy jest to pole standardowe, podwójne, potrójne itd. Do reprezentacji segmentu będzie używana notacja z sekcji \ref{reprezentacja_pola}.
