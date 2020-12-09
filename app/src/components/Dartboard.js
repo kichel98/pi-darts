@@ -1,26 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Svg, { G, Circle, Path } from "react-native-svg"
+import React from 'react';
+import Svg, {Circle, G, Path} from "react-native-svg";
 
-export default function App() {
-  const [segment, setSegment] = useState("not detected");
-  useEffect(() => {
-    const socket = new WebSocket('ws://192.168.1.52:4321');
-    socket.onopen = () => {
-      console.log("opened!")
-    };
-    socket.onopen = () => {
-      console.log("closed!")
-    };
-    socket.onmessage = e => {
-      console.log(segment);
-      setSegment(e.data);
-    };
-  }, []);
-  // converted from assets/tarcza_kontury.svg by https://react-svgr.com/playground/?native=true
-  return (
-    <View style={styles.container}>
+const Dartboard = () => {
+    return (
+      // converted from assets/tarcza_kontury.svg by https://react-svgr.com/playground/?native=true
       <Svg
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -42,16 +25,7 @@ export default function App() {
           />
         </G>
       </Svg>
-      <Text style={{ fontSize: 20 }}>Punkty za ostatni rzut: {segment}</Text>
-    </View>
-  );
-}
+    );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default Dartboard;
