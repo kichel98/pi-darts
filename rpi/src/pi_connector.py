@@ -1,7 +1,7 @@
 import socket
 
-DEFAULT_IP = "192.168.1.51"
-DEFAULT_PORT = 1234
+DEFAULT_IP = "192.168.1.52"
+DEFAULT_PORT = 1235
 
 
 class ServerConnector(object):
@@ -53,7 +53,6 @@ class ServerConnector(object):
         if not data:
             print("[ERROR] Client disconnected")
             raise ConnectionError()
-        print("[INFO] New data from Pi Zero!")
         counter = int.from_bytes(data[:4], byteorder="big")
         x = int.from_bytes(data[4:8], byteorder="big")
         y = int.from_bytes(data[8:12], byteorder="big")
@@ -87,7 +86,7 @@ class ClientConnector(object):
 
     def send_throw_info(self, counter: int, x: int, y: int):
         """
-            Sends (blocking) info about one throw.
+            Sends info about one throw.
             It contains counter of throw and x, y pixels coords of landing point of throw.
             Each element is sent as 4 bytes integer in big endian order.
 
@@ -104,4 +103,3 @@ class ClientConnector(object):
         y = int(y).to_bytes(4, byteorder="big")
         throw_info = bytes(counter + x + y)
         self.s.send(throw_info)
-        print("[INFO] Send data to Pi 4!")

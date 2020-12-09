@@ -27,7 +27,6 @@ class CameraConfig:
     initial_delay: int = 2
     test_frames: int = 10
     awb_mode: str = 'tungsten'
-
     horizontal_fov = 53.5
 
 
