@@ -26,6 +26,7 @@ class BoardMapper(object):
         dart_y -= self.config.board_radius  # change to board coordinate system (centre bull is (0,0))
         dart_y *= -1
         radius, angle = self._convert_cartesian_to_polar(dart_x, dart_y)
+        angle -= 2*math.pi / 40
         base_segment_idx = math.floor(angle / (2*math.pi / len(self.config.segment_order)))
         base_segment = self.config.segment_order[base_segment_idx]
 

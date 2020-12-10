@@ -1,3 +1,4 @@
+import json
 from threading import Thread
 
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
@@ -26,9 +27,15 @@ class AppConnector(object):
         self.server = SimpleWebSocketServer(ip, port, InfoWebSocket)
         self.server.serveforever()
 
-    def send_points(self, segment):
+    def send_points(self, dart_x, dart_y, segment):
+        throw_info = {
+            "x": dart_x,
+            "y": dart_y,
+            "segment": segment
+        }
+        message = json.dumps(throw_info)
         for client in self.server.connections.values():
-            client.sendMessage(str(segment))
+            client.sendMessage(message)
 
 
 class InfoWebSocket(WebSocket):

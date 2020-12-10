@@ -5,17 +5,17 @@ import Dartboard from "./components/Dartboard";
 import WebSocketClient from "./helpers/WebSocketClient";
 
 export default function App() {
-  const [segment, setSegment] = useState("");
+  const [dartInfo, setDartInfo] = useState(null);
 
   useEffect(() => {
     const wsClient = new WebSocketClient();
-    wsClient.setSetterOnMessage(setSegment);
+    wsClient.setSetterOnMessage(setDartInfo);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Dartboard/>
-      <Text style={{ fontSize: 20 }}>Punkty za ostatni rzut: {segment}</Text>
+      <Dartboard dartPosition={dartInfo ? [dartInfo.x, dartInfo.y] : null}/>
+      <Text style={{ fontSize: 20 }}>Punkty za ostatni rzut: {dartInfo ? dartInfo.segment : ""}</Text>
     </View>
   );
 }

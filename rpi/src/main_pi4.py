@@ -32,7 +32,7 @@ def main():
                 dart_x, dart_y = triangulation.triangulate(detector.get_landing_point(cnt), (right_cam_x, right_cam_y))
                 segment = board_mapper.map_dart_position_to_segment(dart_x, dart_y)
                 print(f"Segment: {segment}")
-                app_connector.send_points(segment)
+                app_connector.send_points(dart_x, dart_y, segment)
                 print("-----------------------------")
             previous_frame = frame
 

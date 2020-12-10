@@ -5,7 +5,7 @@ class WebSocketClient {
 
     setSetterOnMessage(setter) {
         this.socket.onmessage = e => {
-            setter(e.data)
+            setter(JSON.parse(e.data))
         };
     }
 }
