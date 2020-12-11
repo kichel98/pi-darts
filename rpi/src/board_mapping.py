@@ -14,7 +14,7 @@ class BoardMapperConfig(object):
     outer_normal_radius: float = 17.0 - 0.8
     double_radius: float = 17.0
     board_radius: float = 22.5
-    segment_order = [13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10, 6]
+    segment_order = [13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10, 6] # TODO: change it according to docs
 
 
 class BoardMapper(object):
@@ -26,7 +26,7 @@ class BoardMapper(object):
         dart_y -= self.config.board_radius  # change to board coordinate system (centre bull is (0,0))
         dart_y *= -1
         radius, angle = self._convert_cartesian_to_polar(dart_x, dart_y)
-        angle -= 2*math.pi / 40
+        angle -= 2*math.pi / 40 # TODO: change it according to docs
         base_segment_idx = math.floor(angle / (2*math.pi / len(self.config.segment_order)))
         base_segment = self.config.segment_order[base_segment_idx]
 
