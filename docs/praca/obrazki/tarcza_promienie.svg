@@ -13,7 +13,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="tarcza_kontury_bez_ramki.svg">
+   sodipodi:docname="tarcza_promienie.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.45032083"
-     inkscape:cx="665.19246"
-     inkscape:cy="858.75497"
+     inkscape:zoom="0.63684983"
+     inkscape:cx="769.72595"
+     inkscape:cy="902.90947"
      inkscape:document-units="cm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -443,7 +443,7 @@
        d="m 22.513226,22.513226 h 0.635"
        id="path76" />
     <path
-       style="fill:#00ff00;stroke:#808000;stroke-width:0.20000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#00d4aa;stroke:#00d4aa;stroke-width:0.20000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="M 22.513226,22.513226 23.450785,21.22906"
        id="path78" />
     <path
@@ -477,7 +477,7 @@
    id="tspan917">1</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:2.70765px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';fill:#808000;stroke:#808000;stroke-width:0.0676913"
+       style="font-size:2.70765px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';fill:#00d4aa;stroke:#00d4aa;stroke-width:0.0676913;"
        x="23.82918"
        y="22.169813"
        id="text915-9"><tspan
@@ -485,8 +485,8 @@
          id="tspan913-6"
          x="23.82918"
          y="22.169813"
-         style="fill:#808000;stroke:#808000;stroke-width:0.0676913">r<tspan
-   style="font-size:1.75997px;baseline-shift:sub;fill:#808000;stroke:#808000;stroke-width:0.0676913"
+         style="fill:#00d4aa;stroke:#00d4aa;stroke-width:0.0676913;">r<tspan
+   style="font-size:1.75997px;baseline-shift:sub;fill:#00d4aa;stroke:#00d4aa;stroke-width:0.0676913;"
    id="tspan940">2</tspan></tspan></text>
     <text
        xml:space="preserve"

@@ -8,3 +8,4 @@ docs/praca/*.log
 docs/praca/*.out
 docs/praca/*.toc
 docs/praca/*.dvi
+docs/praca/_minted-praca/
