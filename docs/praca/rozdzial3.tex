@@ -9,13 +9,13 @@ Powiązany z systemem jest obecnie jeden, główny przypadek użycia. Aktorem je
 \section{Urządzenia i komponenty}
 W systemie występują następujące urządzenia:
 \begin{itemize}
-  \item minikomputer \verb|Raspberry Pi 4|
+  \item minikomputer \verb|Raspberry Pi 4 B|
   \item minikomputer \verb|Raspberry Pi Zero W|
   \item dwie kamery \verb|Camera Module v1 (OmniVision OV5647)|
   \item smartfon
 \end{itemize}
 
-Na diagramie wdrożenia (\ref{deployment}) pokazano te urządzenia wraz z połączeniami między nimi oraz komponentami, jakie wchodzą w ich skład. \verb|Raspberry Pi 4| jest najważniejszym urządzeniem, które synchronizuje pracę innych oraz dokonuje obliczeń. Łączy się z kamerą za pomocą kabla taśmowego, a używa jej do wykrywania rzutu za pomocą biblioteki \verb|OpenCV|. Analogicznie wygląda to w przypadku \verb|Pi Zero|, na którym znajduje się druga instancja detektora rzutu. Po wykryciu rzutu informacje wysyłane są do \verb|Pi 4| z użyciem gniazd TCP, a następnie poddane triangulacji. Na \verb|Pi 4| uruchomiony jest również serwer dla aplikacji mobilnej, która uruchamiana jest na smartfonie w środowisku Expo \cite{expo}. Połączenie następuje zgodnie ze standardem WebSocket.
+Na diagramie wdrożenia (\ref{deployment}) pokazano te urządzenia wraz z połączeniami między nimi oraz komponentami, jakie wchodzą w ich skład. \verb|Raspberry Pi 4| jest najważniejszym urządzeniem, które synchronizuje pracę innych oraz dokonuje obliczeń. Łączy się z kamerą za pomocą kabla taśmowego, a używa jej do wykrywania rzutu za pomocą biblioteki \verb|OpenCV|. Analogicznie wygląda to w przypadku \verb|Pi Zero|, na którym znajduje się druga instancja detektora rzutu. Informacje wysyłane są z \verb|Pi Zero| do \verb|Pi 4| z użyciem gniazd TCP. Na \verb|Pi 4| tworzony jest również serwer dla aplikacji mobilnej, która uruchamiana jest na smartfonie w środowisku Expo \cite{expo}. Połączenie następuje zgodnie ze standardem WebSocket.
 
 % TODO: może inna czcionka w UML?
 \begin{figure}[h!]
@@ -47,16 +47,6 @@ Diagram sekwencji (\ref{sequence}) pokazuje, w jaki sposób odbywa się komunika
 \label{sequence}
 \end{figure}
 
-\section{Przetwarzanie obrazu}
-Podstawowym algorytmem, który nie został opisany w poprzednim rozdziale, jest proces przetwarzania obrazu. Zadaniem, które należy wykonać za pomocą metod związanych z tą dziedziną, jest odjęcie tła (ang. \textit{background substraction}). Polega ono na wyodrębnieniu elementów pojawiających się na pierwszym planie, na podstawie następujących po sobie zdjęć. W prezentowanym systemie użyte zostało w celu wykrycia rzutu, a następnie ustalenia samej pozycji rzutki na zdjęciu. W ogólności jest to zadanie trudne, ze względu na możliwe zmiany tła, spowodowane m.in. minimalnym ruchem lub zmianą warunków oświetlenia. Podejść do jego rozwiązania jest wiele \cite{LearningOpenCV}, jednak w niniejszej pracy, z powodu niewielkiej liczby tego typu czynników, zastosowano jedno z najprostszych - odejmowanie od siebie dwóch kolejnych klatek.
-
-Każda z kamer, co pewien krótki czas, wykonuje zdjęcie. Następnie, dwa ostatnie zdjęcia z danej kamery, są od siebie odejmowane. Dzięki reprezentacji macierzowej, działanie to odbywa się zgodnie z zasadami bezwzględnego odejmowania macierzy. Jego wynikiem jest nowe zdjęcie, w której piksele niezmienione w czasie pomiędzy wykonaniem klatek powinny być bliskie wartości 0 (piksel czarny), zaś te reprezentujące pojawienie się nowego obiektu -- wyraźnie większe od zera. Aby zmniejszyć występujące szumy oraz przekształcić obraz na binarny (czarno-biały), stosuje się następnie funkcję progową (ang. \textit{threshold}), która wszystkie piksele o wartościach niższych od ustalonego progu zamienia na czarne, a wyższe -- na piksele białe. 
-
-Tak przygotowane zdjęcie należy poddać wykrywaniu konturów. Konturem nazywa się zbiór punktów reprezentujących krzywą \cite{LearningOpenCV}. W przypadku problemu omawianego w pracy, celem jest wykrycie konturu wokół rzutki, która pojawiła się na ostatnio wykonanym zdjęciu. % TODO: opisz findContours()
-Algorytm wykrywania konturów jest dość skomplikowany, jego szczegóły można znaleźć w \cite{ContoursAlgorithm}. Po uzyskaniu listy konturów wybierany jest największy z nich (pod względem powierzchni, którą wyznacza), a następny poddany analizie, czy jest to kontur rzutki. W tym miejscu należy wyznaczyć charakterystyczne cechy lotki na zdjęciu, opierając się na empirycznych danych pochodzących z testów. W obecnej implementacji kontur jest uznawany za kontur rzutki wtedy, gdy powierzchnia przez niego wyznaczona mieści się w określonych doświadczalnie granicach. Innymi sposobami jest na przykład sprawdzanie proporcji długości do szerokości w prostokącie okalającym kontur.  Jeśli nie wykryto żadnych konturów lub nie spełniają one warunków, uznaje się, że rzut nie wystąpił pomiędzy badanymi ujęciami.
-
-Ostatnią fazą jest wybranie pojedynczego piksela, którego pozycja będzie reprezentować miejsce wbicia rzutki: jest to najniżej położony piksel konturu (znajdujący się najbliżej tarczy).
-
 \section{Opis protokołów}
 W systemie do komunikacji używa się dwóch protokołów: TCP \cite{TCP} i WebSocket \cite{WebSocket}. Pierwszy z nich używany jest do wysłania informacji z \verb|Pi Zero| do \verb|Pi 4| w sposób binarny: 3 liczby całkowite (pozycja $x$, pozycja $y$ oraz liczba porządkowa rzutki), po 4 bajty na liczbę, w formacie \textit{big endian}. Drugi protokół stosuje się przy przekazaniu komunikatu o wyliczonej pozycji rzutki. Jego treść jest w formacie \verb|JSON| i została pokazana na listingu \ref{json}. 
 
@@ -75,3 +65,13 @@ W systemie do komunikacji używa się dwóch protokołów: TCP \cite{TCP} i WebS
 \caption{Przykładowy komunikat o wykrytej rzutce} 
 \label{json}
 \end{listing}
+
+\section{Algorytm przetwarzania obrazu}
+Podstawowym algorytmem, który nie został opisany w poprzednim rozdziale, jest proces przetwarzania obrazu. Zadaniem, które należy wykonać za pomocą metod związanych z tą dziedziną, jest odjęcie tła (ang. \textit{background substraction}). Polega ono na wyodrębnieniu elementów pojawiających się na pierwszym planie, na podstawie następujących po sobie zdjęć. W prezentowanym systemie użyte zostało w celu wykrycia rzutu, a następnie ustalenia samej pozycji rzutki na zdjęciu. W ogólności jest to zadanie trudne, ze względu na możliwe zmiany tła, spowodowane m.in. minimalnym ruchem lub zmianą warunków oświetlenia. Podejść do jego rozwiązania jest wiele \cite{LearningOpenCV}, jednak w niniejszej pracy, z powodu niewielkiej liczby tego typu czynników, zastosowano jedno z najprostszych - odejmowanie od siebie dwóch kolejnych klatek.
+
+Każda z kamer, co pewien krótki czas, wykonuje zdjęcie. Następnie, dwa ostatnie zdjęcia z danej kamery, są od siebie odejmowane. Dzięki reprezentacji macierzowej, działanie to odbywa się zgodnie z zasadami bezwzględnego odejmowania macierzy. Jego wynikiem jest nowe zdjęcie, w której piksele niezmienione w czasie pomiędzy wykonaniem klatek powinny być bliskie wartości 0 (piksel czarny), zaś te reprezentujące pojawienie się nowego obiektu -- wyraźnie większe od zera. Aby zmniejszyć występujące szumy oraz przekształcić obraz na binarny (czarno-biały), stosuje się następnie funkcję progową (ang. \textit{threshold}), która wszystkie piksele o wartościach niższych od ustalonego progu zamienia na czarne, a wyższe -- na piksele białe. 
+
+Tak przygotowane zdjęcie należy poddać wykrywaniu konturów. Konturem nazywa się zbiór punktów reprezentujących krzywą \cite{LearningOpenCV}. W przypadku problemu omawianego w pracy, celem jest wykrycie konturu wokół rzutki, która pojawiła się na ostatnio wykonanym zdjęciu. % TODO: opisz findContours()
+Algorytm wykrywania konturów jest dość skomplikowany, jego szczegóły można znaleźć w \cite{ContoursAlgorithm}. Po uzyskaniu listy konturów wybierany jest największy z nich (pod względem powierzchni, którą wyznacza), a następny poddany analizie, czy jest to kontur rzutki. Należy wyznaczyć charakterystyczne cechy lotki na zdjęciu, opierając się na empirycznych danych pochodzących z testów. W obecnej implementacji kontur jest uznawany za kontur rzutki wtedy, gdy powierzchnia przez niego wyznaczona mieści się w określonych doświadczalnie granicach. Innymi sposobami jest na przykład sprawdzanie proporcji długości do szerokości w prostokącie okalającym kontur.  Jeśli nie wykryto żadnych konturów lub nie spełniają one warunków, uznaje się, że rzut nie wystąpił pomiędzy badanymi ujęciami.
+
+Ostatnią fazą jest wybranie pojedynczego piksela, którego pozycja będzie reprezentować miejsce wbicia rzutki: jest to najniżej położony piksel konturu (znajdujący się najbliżej tarczy).
