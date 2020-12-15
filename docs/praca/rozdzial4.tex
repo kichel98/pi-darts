@@ -6,12 +6,12 @@ W tym rozdziale opisane są szczegóły implementacyjne projektu. Więcej uwagi 
 \section{Opis urządzeń}
 
 \subsection{Raspberry Pi}
-Programy wykonywane są na urządzeniach z rodziny \verb|Raspberry Pi| \cite{RPi}. Są to jednopłytkowe minikomputery, tzw. SoC (ang. \textit{System-on-a-chip}). Ich jednostką obliczeniową jest procesor firmy Broadcom, wykonany w architekturze ARM. Pozwalają na obsługę i komunikację z innymi urządzeniami za pomocą wielu portów i interfejsów: m.in. USB, HDMI, GPIO (40 pinów wejścia/wyjścia ogólnego przeznaczenia), CSI (interfejs kamery), RJ-45, Wi-Fi czy Bluetooth. Nie posiadają one wbudowanej pamięci, wszystkie dane są zapisywane na karcie SD, na której znajduje się również system operacyjny, najczęściej Linux. Organizacja produkująca minikomputery wydaje swoją dystrybucję nazwaną Raspberry Pi OS (wcześniej Raspbian), opartą na Debianie. Wydanych zostało kilka wersji Raspberry różniących się od siebie przeznaczeniem i specyfikacją. W systemie użyto Pi 4 i Pi Zero. Pierwsza z nich to najnowsza wersja, z czterordzeniowym procesorem taktowanym zegarem 1,5 GHz oraz pamięcią RAM 2 GB. Druga zaś jest odpowiedzią na sytuacje, gdzie tak duże moce obliczeniowe nie są potrzebne -- Pi Zero ma mniejsze wymiary, słabszy procesor oraz mniej pamięci RAM, co skutkuje również mniejszą ceną.
+Programy wykonywane są na urządzeniach z rodziny Raspberry Pi \cite{RPi}. Są to jednopłytkowe minikomputery, tzw. SoC (ang. \textit{System-on-a-chip}). Ich jednostką obliczeniową jest procesor firmy Broadcom, wykonany w architekturze ARM. Pozwalają na obsługę i komunikację z innymi urządzeniami za pomocą wielu portów i interfejsów: m.in. USB, HDMI, GPIO (40 pinów wejścia/wyjścia ogólnego przeznaczenia), CSI (interfejs kamery), RJ-45, Wi-Fi czy Bluetooth. Nie posiadają one wbudowanej pamięci, wszystkie dane są zapisywane na karcie SD, na której znajduje się również system operacyjny, najczęściej Linux. Organizacja produkująca minikomputery wydaje swoją dystrybucję nazwaną Raspberry Pi OS (wcześniej Raspbian), opartą na Debianie. Wydanych zostało kilka wersji Raspberry różniących się od siebie przeznaczeniem i specyfikacją. W systemie użyto \verb|Pi 4| i \verb|Pi Zero|. Pierwsza z nich to najnowsza wersja, z czterordzeniowym procesorem taktowanym zegarem 1,5 GHz oraz pamięcią RAM 2 GB. Druga zaś jest odpowiedzią na sytuacje, gdzie tak duże moce obliczeniowe nie są potrzebne -- Pi Zero ma mniejsze wymiary, słabszy procesor oraz mniej pamięci RAM, co skutkuje również mniejszą ceną.
 \subsection{Kamery}
 Kamery użyte w systemie to kamery dedykowane do Raspberry Pi: Camera Module v1 z matrycą OmniVision OV5647. Pozwalają na wykonywanie zdjęć w rozdzielczości 2592 $\times$ 1944 pikseli, ich poziome pole widzenia to $53,5 \degree \pm 0,13 \degree$, a ogniskowa wynosi 3,60 mm. Pełna specyfikacja jest dostępna na stronie producenta \cite{RPi}.
 
-Początkowo planowano użycie jedynie jednego minikomputera, do którego podłączone byłyby dwie kamery USB lub jedna kamera Pi i jedna USB. Pierwszy wariant został odrzucony z powodu wysokiej ceny (lub gorszej jakości) kamer internetowych oraz możliwymi problemami z przepustowością USB. Drugi za to wprowadzałby niepotrzebny brak spójności oraz niemożność reużywania kodu źródłowego, obsługującego kamerę dedykowaną. Dodatkowo, tego typu kamera posiada sprzętowe i programowe wsparcie i oferuje pełną kompatybilność z urządzeniem, co wpływa na szybkość i niezawodność działania. Niemożliwe jest jednak bezpośrednie podłączenie dwóch takich kamer, gdyż Pi 4 posiada jedynie jeden port CSI. Dlatego zdecydowano się na użycie drugiego, tańszego urządzenia z serii Raspberry, do którego można podłączyć drugą kamerę. 
-
+Początkowo planowano użycie jedynie jednego minikomputera, do którego podłączone byłyby dwie kamery USB lub jedna kamera Pi i jedna USB. Pierwszy wariant został odrzucony z powodu wysokiej ceny (lub gorszej jakości) kamer internetowych oraz możliwymi problemami z przepustowością USB. Drugi za to wprowadzałby niepotrzebny brak spójności oraz niemożność reużywania kodu źródłowego, obsługującego kamerę dedykowaną. Dodatkowo, tego typu kamera posiada sprzętowe i programowe wsparcie i oferuje pełną kompatybilność z urządzeniem, co wpływa na szybkość i niezawodność działania. Niemożliwe jest jednak bezpośrednie podłączenie dwóch takich kamer, gdyż \verb|Pi 4| posiada jedynie jeden port CSI. Dlatego zdecydowano się na użycie drugiego, tańszego urządzenia z serii Raspberry, do którego można podłączyć drugą kamerę. 
+\clearpage
 \section{Technologie}
 Użyte technologie:
 \begin{itemize}
@@ -61,7 +61,8 @@ edge=densely dotted}
           [throw$\_$detector.py, is file]
           [triangulation.py, is file]
           [board$\_$mapping.py, is file]]
-      [sync.sh, is file]]
+      [sync.sh, is file]
+      [requirements.txt, is file]]
 ]
 \end{forest}
 
@@ -83,7 +84,7 @@ Folder z projektem o nazwie \verb|pi-darts| zawiera dwie aplikacje: \verb|app| i
   
 \end{itemize}
 
-\section{Wyniki}
+\section{Efekt końcowy}
 Efekty działania aplikacji zostaną pokazane na przykładzie. Na rysunku \ref{rzutka_gora} widoczny jest rzut z góry na tarczę z wbitą rzutką w pole standardowe 10. Następnie, na rysunku \ref{rzutka_kontury} zielonym kolorem zaznaczone zostały kontury wokół rzutki, osobno dla każdej z kamer. Pojedynczy, czerwony punkt jest uznawany za miejsce wbicia lotki. Ostateczny rezultat działania systemu widoczny jest na zrzucie ekranu z aplikacji mobilnej, gdzie prezentowane dane dobrze odzwierciedlają wykonany rzut.
 \begin{figure}[h!]
 \begin{center}
@@ -120,6 +121,8 @@ Efekty działania aplikacji zostaną pokazane na przykładzie. Na rysunku \ref{r
 \label{screenshot}
 \end{figure} 
 
+\section{Testy}
+TODO
 \section{Problemy}
 Podczas tworzenia systemu natrafiono na szereg problemów, m.in:
 \begin{itemize}
@@ -127,9 +130,9 @@ Podczas tworzenia systemu natrafiono na szereg problemów, m.in:
   \item mało skuteczne wykrywanie rzutki, gdy tło miało podobny kolor do koloru lotki. Z tego powodu za stelażem ustawiono prowizoryczne zasłony o odmiennych kolorach. Przez długi czas skuteczność obniżała również zbyt wczesna (tj. wykonana przed odjęciem tła) konwersja obrazu do skali szarości, powodująca stratę informacji.
   \item instalacja biblioteki OpenCV, która (w przypadku kompilacji bezpośrednio ze źródeł), trwała na \verb|Pi Zero| ok. 20 godzin.
   \item ustawienie rozdzielczości zdjęcia -- okazało się, że szerokość i wysokość muszą być wielokrotnościami 16.
-  \item słaba jakość zdjęć -- przed użyciem i poprawną konfiguracją \verb|picamera|, zdjęcia wykonywane w trakcie działania systemu były wyraźnie gorszej jakości niż te, wykonane statycznie, np. programem \verb|raspistill|.
+  \item słaba jakość zdjęć -- przed użyciem i poprawną konfiguracją picamera, zdjęcia wykonywane w trakcie działania systemu były wyraźnie gorszej jakości niż te, wykonane statycznie, np. programem \verb|raspistill|.
 \end{itemize}
 \section{Prowadzenie projektu}
-Projekt był tworzony z użyciem systemu kontroli wersji Git, a zdalne repozytorium znajduje się na portalu GitHub (\url{www.github.com}). Umożliwiło to wygodną, jednoczesną pracę nad różnymi elementami programu, a także zapewniało bezpieczeństwo w przypadku ewentualnych pomyłek.
+Projekt był tworzony z użyciem systemu kontroli wersji Git, a zdalne repozytorium znajduje się na portalu GitHub \footnote{Adres: \url{www.github.com}}. Umożliwiło to wygodną, jednoczesną pracę nad różnymi elementami programu, a także zapewniało bezpieczeństwo w przypadku ewentualnych pomyłek.
 
 W celu udokumentowania procesu analizy i tworzenia systemu, a także wykonania implementacji na czas, wykorzystano funkcjonalności portalu GitHub do tworzenia tablic projektowych (ang. \textit{Kanban board}), do których systematycznie były dołączane nowe zadania. Wyznaczano również kamienie milowe, które wskazywały, w jakim miejscu znajduje się projekt. 
