@@ -15,7 +15,7 @@ class DetectorConfig:
             min_contour_area    minimum value of contour area which qualifies contour to be a throw
             max_contour_area    maximum value of contour area which qualifies contour to be a throw
     """
-    threshold = 25
+    threshold = 20
     min_contour_area = 15000
     max_contour_area = 100000
 

@@ -23,7 +23,7 @@ class CameraConfig:
     """
     width: int = 2592
     height: int = 1936
-    fps = 5
+    fps = 1
     initial_delay: int = 2
     test_frames: int = 10
     awb_mode: str = 'tungsten'
