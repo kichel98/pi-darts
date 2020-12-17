@@ -123,7 +123,16 @@ Efekty działania aplikacji zostaną pokazane na przykładzie. Na rysunku \ref{r
 \end{figure} 
 
 \section{Testy}
-TODO
+Po skończeniu implementacji, wykonano testy dokładności wykrywania pozycji rzutki. Przeprowadzono 20 tur rzutów po 3 rzuty oraz sprawdzono, jaki procent z nich został poprawnie rozpoznany. Wyniki przestawia tabela \ref{table:testy}. Łatwo zauważyć, że przy pierwszym rzucie w turze wyniki są zadowalające, lecz z każdym kolejnym rzutem są coraz niższe. Wynika to m.in. z sytuacji, gdy jedna lotka przesłania drugą, utrudniając analizę. Rozwiązaniem tego problemu jest np. dodanie kolejnej kamery.
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Rzut 1 & Rzut 2 & Rzut 3 & Łącznie \\ \hline
+90\%   & 75\%   & 55\%   & 73,34\% \\ \hline
+\end{tabular}
+\captionsource{{\color{dgray}Wyniki testów }}{Opracowanie własne}
+\label{table:testy}
+\end{table}
 \section{Problemy}
 Podczas tworzenia systemu natrafiono na szereg problemów, m.in:
 \begin{itemize}
