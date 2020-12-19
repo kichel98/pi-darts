@@ -16,3 +16,14 @@ app/web-build/
 
 # macOS
 app/.DS_Store
+
+# additional LaTeX files
+docs/praca/svg-inkscape/
+docs/praca/*.aux
+docs/praca/*.bbl
+docs/praca/*.blg
+docs/praca/*.log
+docs/praca/*.out
+docs/praca/*.toc
+docs/praca/*.dvi
+docs/praca/_minted-praca/

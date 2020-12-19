@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="90cm"
+   height="90cm"
+   viewBox="0 0 90.000002 89.999991"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="stelaz_trojkat.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.26749999"
+     inkscape:cx="1110.9065"
+     inkscape:cy="1750.5438"
+     inkscape:document-units="cm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="1591"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false"
+     units="mm"
+     inkscape:snap-bbox="false"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-others="true"
+     inkscape:snap-nodes="true"
+     inkscape:snap-center="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-tangential="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1046" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.0264583;stroke-opacity:1"
+       id="path1005"
+       cx="25.263229"
+       cy="25.263229"
+       r="22.5" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.210816;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect858"
+       width="74.289185"
+       height="74.289185"
+       x="2.855408"
+       y="2.855408" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.0191114"
+       id="path895"
+       cx="77.144592"
+       cy="25.2505"
+       r="0.80194432" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.0191114"
+       id="path895-3"
+       cx="25.2505"
+       cy="77.144592"
+       r="0.80194438" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 25.250497,77.144582 77.144582,25.250497"
+       id="path912" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.0191114"
+       id="path895-2"
+       cx="36.250385"
+       cy="12.907711"
+       r="0.80194438" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 25.250494,77.144571 36.250381,12.90771"
+       id="path929" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 36.250381,12.90771 77.144582,25.250497"
+       id="path931" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.504, 0.504;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 25.250497,77.144582 4.9868475,35.016089"
+       id="path937" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.504, 0.504;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 25.250494,77.144571 45.534815,35.02604"
+       id="path939" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.504, 0.504;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 77.144571,25.250494 35.016089,4.9868478"
+       id="path941" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.504, 0.504;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 77.144561,25.25049 35.026045,45.534812"
+       id="path943" />
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.086;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1"
+       id="path945"
+       sodipodi:type="arc"
+       sodipodi:cx="25.250494"
+       sodipodi:cy="77.144569"
+       sodipodi:rx="10.772815"
+       sodipodi:ry="10.772815"
+       sodipodi:start="4.8819738"
+       sodipodi:end="5.4977151"
+       sodipodi:arc-type="slice"
+       d="m 27.068656,66.526292 a 10.772815,10.772815 0 0 1 5.79882,3.000198 l -7.616982,7.618079 z" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.126;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1"
+       id="path945-9"
+       sodipodi:type="arc"
+       sodipodi:cx="77.144585"
+       sodipodi:cy="25.250498"
+       sodipodi:rx="10.772815"
+       sodipodi:ry="10.772815"
+       sodipodi:start="2.3571723"
+       sodipodi:end="3.4332441"
+       sodipodi:arc-type="slice"
+       d="M 69.519609,32.860576 A 10.772815,10.772815 0 0 1 66.826702,22.152944 l 10.317883,3.097554 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.6899px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.117251"
+       x="24.392467"
+       y="82.079834"
+       id="text964"><tspan
+         sodipodi:role="line"
+         id="tspan962"
+         x="24.392467"
+         y="82.079834"
+         style="stroke-width:0.117251">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.6899px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.117251"
+       x="30.48818"
+       y="82.191444"
+       id="text964-5"><tspan
+         sodipodi:role="line"
+         id="tspan962-6"
+         x="30.48818"
+         y="82.191444"
+         style="stroke-width:0.117251" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.6899px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.117251"
+       x="80.125717"
+       y="27.800674"
+       id="text964-55"><tspan
+         sodipodi:role="line"
+         id="tspan962-3"
+         x="80.125717"
+         y="27.800674"
+         style="stroke-width:0.117251">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.6899px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.117251"
+       x="30.485828"
+       y="13.009213"
+       id="text964-6"><tspan
+         sodipodi:role="line"
+         id="tspan962-7"
+         x="30.485828"
+         y="13.009213"
+         style="stroke-width:0.117251">P</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.01522px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.125379"
+       x="27.160036"
+       y="71.102196"
+       id="text1018"><tspan
+         sodipodi:role="line"
+         id="tspan1016"
+         x="27.160036"
+         y="71.102196"
+         style="stroke-width:0.125379">𝛾</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.31399px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.157847"
+       x="68.925941"
+       y="29.33993"
+       id="text1022"><tspan
+         sodipodi:role="line"
+         id="tspan1020"
+         x="68.925941"
+         y="29.33993"
+         style="stroke-width:0.157847">δ</tspan></text>
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.0191114"
+       id="path895-2-0"
+       cx="77.144592"
+       cy="77.144592"
+       r="0.80194438" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.6899px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.117251"
+       x="78.679787"
+       y="81.75248"
+       id="text964-55-9"><tspan
+         sodipodi:role="line"
+         id="tspan962-3-9"
+         x="78.679787"
+         y="81.75248"
+         style="stroke-width:0.117251">C</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.0859999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path945-1"
+       sodipodi:type="arc"
+       sodipodi:cx="36.250385"
+       sodipodi:cy="12.907711"
+       sodipodi:rx="10.772815"
+       sodipodi:ry="10.772815"
+       sodipodi:start="0.29295233"
+       sodipodi:end="1.7408512"
+       sodipodi:arc-type="slice"
+       d="M 46.564229,16.018685 A 10.772815,10.772815 0 0 1 34.427233,23.525133 L 36.250385,12.907711 Z" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.26947px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';stroke-width:0.231733"
+       x="37.714279"
+       y="20.591993"
+       id="text883"><tspan
+         sodipodi:role="line"
+         id="tspan881"
+         x="37.714279"
+         y="20.591993"
+         style="stroke-width:0.231733">ε</tspan></text>
+  </g>
+</svg>

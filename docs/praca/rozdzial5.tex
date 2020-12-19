@@ -1,0 +1,31 @@
+\chapter{Instalacja i wdrożenie}
+\label{installation}
+\thispagestyle{chapterBeginStyle}
+
+System jest dość specyficzny, dlatego trudno o łatwy sposób wdrożenia go ponownie, głównie z powodu konieczności wykonania stelaża, skonfigurowania urządzeń i zamontowania kamer. Mimo tego, starano się maksymalnie uprościć i zautomatyzować proces tworzenia i uruchamiania systemu.
+
+Do uruchomienia programu na \verb|Pi 4| oraz \verb|Pi Zero| wymagane jest zainstalowanie interpretera języka Python w wersji 3.7 lub wyższej oraz programu \verb|pip3|. Lista pozostałych zależności zapisana w pliku \\ \verb|requirements.txt|, którego można użyć do wygodnej instalacji:
+\newline \newline
+\indent \verb|cd pi-darts/rpi| \newline
+\indent \verb|pip3 install -r requirements.txt|
+\newline \newline
+\noindent Następnie, by uruchomić program, należy posłużyć się komendami: \newline \newline
+\indent \verb|cd src| \newline
+\indent \verb|python3 main_pi4.py| (dla \verb|Pi 4|) \newline\newline lub \indent \newline \newline \indent \verb|cd src| \newline \indent \verb|python3 main_pi0.py| (dla \verb|Pi Zero|) \newline
+
+Warto wspomnieć w tym miejscu o skrypcie \verb|sync.sh|, który został napisany w celu łatwiejszej pracy nad rozwijaniem kodu źródłowego. Dzięki niemu można tworzyć oprogramowanie na komputerze np. z systemem Windows, a wszystkie pliki automatycznie, po każdym zapisie, przeniosą się na urządzenie Raspberry za pomocą protokołu SCP. Wywołanie wygląda następująco:
+\newline \newline
+\indent \verb|./sync.sh <adres_IP_urządzenia> [<ścieżka do klucza RSA>]|
+\newline
+
+Do uruchomienia aplikacji mobilnej wymagane jest posiadanie środowiska Node.js w wersji 12 lub wyższej. 
+
+\noindent Instalacja potrzebnych zależności:
+\newline \newline
+\indent \verb|cd pi-darts/app| \newline
+\indent \verb|npm install -g expo-cli| \newline
+\indent \verb|npm install| \newline
+
+\noindent Uruchomienie aplikacji mobilnej:
+\newline \newline
+\indent \verb|npm start| 
