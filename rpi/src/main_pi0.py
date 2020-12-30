@@ -3,10 +3,15 @@ from camera import CameraConfig, Camera
 from pi_connector import ClientConnector
 from throw_detector import DetectorConfig, ThrowDetector
 
+# added to show more debug info about e.g. segfaults
 faulthandler.enable()
 
 
 def main():
+    """
+        Main entry point for Pi 0.
+        Sets connection with Pi 4 and starts dart detection.
+    """
     with ClientConnector() as connector, Camera(CameraConfig()) as cam:
         connector.connect_client_to_server()
         detector = ThrowDetector(DetectorConfig())

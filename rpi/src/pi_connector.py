@@ -5,7 +5,9 @@ DEFAULT_PORT = 1235
 
 
 class ServerConnector(object):
-
+    """
+        Represents server side of connection between Pi's.
+    """
     def __init__(self):
         self.s = None
         self.conn = None
@@ -60,7 +62,9 @@ class ServerConnector(object):
 
 
 class ClientConnector(object):
-
+    """
+        Represents client side of connection between Pi's.
+    """
     def __init__(self):
         self.s = None
 

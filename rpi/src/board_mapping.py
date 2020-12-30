@@ -5,7 +5,21 @@ from dataclasses import dataclass
 @dataclass
 class BoardMapperConfig(object):
     """
-        https://www.bdodarts.com/images/bdo-content/doc-lib/B/bdo-playing-rules.pdf
+        Class designed to produce config object needed to perform mapping dart position to board field.
+        Radiuses relate to subsequent rounds on dartboard.
+
+        Arguments:
+            inner_bull_radius       radius of inner bull round
+            outer_bull_radius       radius of outer bull round
+            inner_normal_radius     radius of inner round with "normal" values
+            treble_radius           radius of treble round
+            outer_normal_radius     radius of outer round with "normal" values
+            double_radius           radius of double round
+            board_radius            radius of whole dartboard round
+            segment_order           list with order of standard segments on board, counterclockwise,
+                                        starts with right middle field
+
+        Source for default values: https://www.bdodarts.com/images/bdo-content/doc-lib/B/bdo-playing-rules.pdf
     """
     inner_bull_radius: float = 0.635
     outer_bull_radius: float = 1.59
@@ -18,10 +32,22 @@ class BoardMapperConfig(object):
 
 
 class BoardMapper(object):
+    """
+        Manages dart to field mapping, based on config object.
+    """
     def __init__(self, config: BoardMapperConfig):
         self.config = config
 
     def map_dart_position_to_segment(self, dart_x, dart_y):
+        """
+            Assigns dart position to dartboard segment (also called field).
+
+            Arguments:
+                dart_x      first coord of dart
+                dart_y      second coord of dart
+
+            Returns one board segment, in which a dart connected.
+        """
         dart_x -= self.config.board_radius  # change to board coordinate system (centre bull is (0,0))
         dart_y -= self.config.board_radius  # change to board coordinate system (centre bull is (0,0))
         dart_y *= -1
@@ -47,6 +73,9 @@ class BoardMapper(object):
 
     @staticmethod
     def _convert_cartesian_to_polar(x, y):
+        """
+            Converts cartesian coordinates to polar coordinates.
+        """
         radius = math.sqrt(x**2 + y**2)
         if x == 0:
             if y >= 0:

@@ -10,6 +10,10 @@ faulthandler.enable()
 
 
 def main():
+    """
+        Main entry point for Pi 4.
+        Sets connections with Pi 0 and mobile app. Starts dart detection and perform calculation.
+    """
     with ServerConnector() as connector, AppConnector() as app_connector, Camera(CameraConfig()) as cam:
         connector.create_server_and_wait_for_client()
         app_connector.start_server()
