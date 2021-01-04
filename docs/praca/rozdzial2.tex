@@ -4,13 +4,13 @@
 Ten rozdział ma za zadanie przedstawić teoretyczną (matematyczną) część rozwiązania głównego problemu -- uzyskania pozycji rzutki. Na początku zaprezentowany i podzielony na części został ogólny pomysł rozwiązania. Pokazane zostały również alternatywne propozycje podejścia do problemu, wraz z uzasadnieniem, dlaczego nie zostały one wybrane. Następnie omówiono podstawowe terminy i zagadnienia, których znajomość potrzebna jest do pełnego zrozumienia dalszych tematów. Główną częścią rozdziału jest prezentacja wszystkich kluczowych obliczeń i operacji, które zachodzą podczas analizy rzutu, krok po kroku. Detale dotyczące niektórych algorytmów zostaną przedstawione w późniejszych rozdziałach, w tym zaś uznaje się je za tzw. czarne skrzynki (ang. \textit{black box}), to znaczy elementy programu, które przyjmują pewne dane wejściowe i zwracają wyniki, lecz ich implementacja nie jest rozważana.
 
 \section{Idea rozwiązania}
-Pierwszą decyzją, jaką należało podjąć podczas tworzenia rozwiązania, było ustalenie, na podstawie jakich danych wejściowych system powinien rozpoznawać rzut. Postawiono na ten sam typ danych, którym człowiek posługuje się przy ocenie rzutu, czyli obraz. W systemie rolę wzroku pełnią kamery, które co określony czas dostarczają zdjęcia tarczy. Dzięki ciągłemu porównywaniu następujących po sobie klatek, system wykrywa rzut i rozpoczyna przetwarzanie obrazu z wbitą lotką. Do określenia dokładnej pozycji rzutki wykorzystano metodę triangulacji. Pozwala ona na obliczenie dystansu do obiektu za pomocą zdjęć z dwóch kamer. Tarcza i kamery są zamocowane w stelażu o znanych wymiarach. Kamery w ustalonej odległości od siebie, a ich soczewki są ustawione prostopadle do powierzchni tarczy. Następnie, po zmianie układu współrzędnych, dzięki znanym dokładnym wymiarom tarczy, pozycja rzutki jest przyporządkowywana do konkretnego segmentu punktowego.
+Pierwszą decyzją, jaką należało podjąć podczas tworzenia rozwiązania, było ustalenie, na podstawie jakich danych wejściowych system powinien rozpoznawać rzut. Postawiono na ten sam typ danych, którym człowiek posługuje się przy ocenie rzutu, czyli obraz. W systemie rolę wzroku pełnią kamery, które co określony czas dostarczają zdjęcia tarczy. Dzięki ciągłemu porównywaniu następujących po sobie klatek, system wykrywa rzut i rozpoczyna przetwarzanie obrazu z wbitą lotką. Do określenia dokładnej pozycji rzutki wykorzystano metodę triangulacji. Pozwala ona na obliczenie dystansu do obiektu za pomocą zdjęć z dwóch kamer. Tarcza i kamery są zamocowane w stelażu o znanych wymiarach. Kamery znajdują się w ustalonej odległości od siebie, a ich soczewki są ustawione prostopadle do powierzchni tarczy. Następnie, po zmianie układu współrzędnych, dzięki znanym dokładnym wymiarom tarczy, pozycja rzutki jest przyporządkowywana do konkretnego segmentu punktowego.
 
 Pomysłem również opartym na przetwarzaniu obrazu, jest próba uzyskania miejsca wbicia rzutki z użyciem tylko jednej kamery, która jest umiejscowiona przed tarczą, naprzeciw jej. Obniżyłoby to koszty i ułatwiło obliczenia, jednak byłoby niepraktyczne, ponieważ to gracz musi stać na wprost tarczy, a kamera znajdowałaby się pomiędzy nim a tarczą, w środku strefy lotu. Cechowałoby się to także małą przenoszalnością, trudno byłoby zawsze ustawić kamerę idealnie na wysokości środka tarczy. Gdyby jednak kamera była przesunięta względem półprostej prostopadłej do płaszczyzny tarczy, przechodzącej przez jej środek, to przetwarzanie obrazu i obliczenia mocno by się utrudniły, gdyż kamera patrzyłaby pod pewnym kątem na tarczę. Trudniejsze byłoby również mocowanie kamery.
 
 Kolejnym wariantem, branym pod uwagę przy nakreślaniu rozwiązania, było zastosowanie techniki multilateracji, która polega na określaniu położenia obiektu za pomocą mierzenia różnic w czasie dotarcia sygnału do kilku odbiorników. W omawianym przypadku można by użyć mikrofonów na obrzeżach tarczy, które oczekiwałyby na dźwięk wydany przez wbicie się rzutki. Następnie porównując różnice w czasie wykrycia dźwięku, system mógłby wyliczyć pozycję rzutki. To rozwiązanie również obniżyłoby koszty systemu, lecz dawałoby gorsze rezultaty. Tego typu techniki są przede wszystkim stosowane w geodezji, przy dużych odległościach między odbiornikami a emiterem. Tutaj różnice pomiędzy przybyciem dźwięku do poszczególnych mikrofonów byłyby minimalne, przez co trudne byłoby zachowanie wystarczającej precyzji. Wąskim gardłem byłby również przetwornik analogowo-cyfrowy, ponieważ różnice te mogłyby być mniejsze od różnicy w czasie pomiędzy dwiema kolejnymi próbkami, powstałymi podczas procesu próbkowania w przetworniku.
 
-Pod uwagę brano również analizę obrazu z użyciem sztucznej inteligencji. Potencjalnie można by wytrenować sieć neuronową na podstawie wielu zdjęć tarczy z wbitą rzutką. Najważniejszymi wadami tego rozwiązania w stosunku do metody triangulacji są ograniczone możliwości poprawy w przypadku niezadowalających wyników oraz trudność debugowania. Zaimplementowany ostatecznie sposób można było dużo łatwiej podzielić na części, sprawdzić małe elementy systemu, dzięki czemu błędy w działaniu programu są szybciej lokalizowane i naprawiane. W każdym momencie autor kodu źródłowego jest świadomy, jakie procesy zachodzą w systemie i może na nie wpływać, ograniczona jest rola tzw. czarnych skrzynek. Prawdopodobnie, gdyby użyto sztucznej inteligencji, niemożliwe byłoby uzyskanie np. pozycji rzutki we współrzędnych kartezjańskich, a jedyną daną wyjściową byłoby pole, w jaki trafiła lotka.
+Pod uwagę brano również analizę obrazu z użyciem sztucznej inteligencji. Potencjalnie można by wytrenować sieć neuronową na podstawie wielu zdjęć tarczy z wbitą rzutką. Najważniejszymi wadami tego rozwiązania w stosunku do metody triangulacji są ograniczone możliwości poprawy w przypadku niezadowalających wyników oraz trudność debugowania. Zaimplementowany ostatecznie sposób można było dużo łatwiej podzielić na części, sprawdzić małe elementy systemu, dzięki czemu błędy w działaniu programu są szybciej lokalizowane i naprawiane. W każdym momencie autor kodu źródłowego jest świadomy, jakie procesy zachodzą w systemie i może na nie wpływać, ograniczona jest rola tzw. czarnych skrzynek. Prawdopodobnie, gdyby użyto sztucznej inteligencji, trudne byłoby uzyskanie pozycji rzutki we współrzędnych kartezjańskich, a jedyną daną wyjściową byłoby pole, w jakie trafiła lotka.
 
 \section{Podstawy fotografii}
 Urządzeniem, które jest w stanie dostarczać optyczne odzwierciedlenia ograniczonego wycinka przestrzeni trójwymiarowej za pomocą dwuwymiarowych zdjęć, jest aparat fotograficzny. Z biegiem czasu stawał się on coraz bardziej zaawansowany technologicznie, jednak do potrzeb niniejszej pracy wystarczającym modelem jest pierwszy model aparatu, czyli aparat otworkowy (\textit{camera obscura}). Jego budowa jest bardzo prosta: w zaciemnionym pudełku, na jednej z jego ścian tworzy się niewielki otwór, za pomocą którego wpada światło. Na przeciwległej ścianie tworzy się obrócony obraz tego, co znajduje się na wprost pudełka. Schemat działania aparatu otworkowego pokazany jest na rysunku \ref{camera_obscura}.
@@ -112,10 +112,10 @@ a_2 = \tan (\pi - \frac{\pi - \alpha}{2}) = \tan (\frac{\pi + \alpha}{2})\ .
 \end{gather*}
 Półproste $l$ i $m$ przecinają się w punkcie $P(0, d)$:
 \begin{gather*}
-a_1 \cdot 0 + b_1 = a_2 \cdot 0 + b_2\ , \\
+a_1 \cdot 0 + b_1 = a_2 \cdot 0 + b_2 = d\ , \\
 b_1 = b_2 = d\ .
 \end{gather*}
-Proste przecinają się z osią $OY$ w tym sam punkcie, więc mają ten sam wyraz wolny, równy $d$.
+Proste przecinają się z osią $OY$ w tym samym punkcie, więc mają ten sam wyraz wolny, równy $d$.
 \begin{gather*}
 l: y = \tan (\frac{\pi - \alpha}{2})x + d\ , \\
 m: y = \tan (\frac{\pi + \alpha}{2})x + d\ .
@@ -173,13 +173,13 @@ Zgodnie z wcześniej przedstawioną ideą, rozwiązanie zostało oparte na stwor
 
 Oto etapy obliczeń, składających się na rozwiązanie głównego problemu:
 \begin{itemize}
-  \item uzyskanie pozycji piksela, który reprezentuje miejsce wbicia rzutki (dla każdej z kamer)
-  \item obliczenie (ze współrzędnych piksela) kąta pomiędzy kamerą a rzutką  (dla każdej z kamer)
-  \item umiejscowienie kątów w układzie związanym z kamerami, sformułowanie trójkąta kamera-kamera-rzutka
-  \item obliczenie nieznanych kątów i boków trójkąta
-  \item obliczenie pozycji $(x, y)$ rzutki, a następnie zamiana układu odniesienia na taki, gdzie $(0, 0)$ to środek tarczy
-  \item zamiana współrzędnych kartezjańskich na biegunowe
-  \item przyporządkowanie współrzędnych biegunowych $(r, \varphi)$ do pola punktowego (segmentu) na tarczy
+  \item uzyskanie pozycji piksela, który reprezentuje miejsce wbicia rzutki (dla każdej z kamer);
+  \item obliczenie (ze współrzędnych piksela) kąta pomiędzy kamerą a rzutką  (dla każdej z kamer);
+  \item umiejscowienie kątów w układzie związanym z kamerami, sformułowanie trójkąta kamera-kamera-rzutka;
+  \item obliczenie nieznanych kątów i boków trójkąta;
+  \item obliczenie pozycji $(x, y)$ rzutki, a następnie zamiana układu odniesienia na taki, gdzie $(0, 0)$ to środek tarczy;
+  \item zamiana współrzędnych kartezjańskich na biegunowe;
+  \item przyporządkowanie współrzędnych biegunowych $(r, \varphi)$ do pola punktowego (segmentu) na tarczy.
 \end{itemize}
 
 % TODO: sprecyzuj, co to za kąty (te z kamery), bo to co napisałeś, to nie do końca prawda
@@ -341,7 +341,7 @@ g_2: [0, 2\pi] \to A\ ,
 g_2(\varphi) = a_k, \mbox{gdzie } k = \left \lfloor{\myfrac[8pt]{\displaystyle \left(\varphi + \frac{1}{2} \cdot \frac{2\pi}{20}\right) \mod 2\pi}{\displaystyle \frac{2\pi}{20}}}\right \rfloor\ .
 \]
 
-Ostatecznie, korzystając z pomocniczych funkcji, $g_1$ określa pole punktowe w następujący sposób:
+Ostatecznie, korzystając z pomocniczych funkcji, $g$ określa pole punktowe w następujący sposób:
 
 \[
 g(r_p, \varphi) = 
