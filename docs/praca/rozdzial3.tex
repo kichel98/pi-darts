@@ -9,10 +9,10 @@ Powiązany z systemem jest obecnie jeden, główny przypadek użycia. Aktorem je
 \section{Urządzenia i komponenty}
 W systemie występują następujące urządzenia:
 \begin{itemize}
-  \item minikomputer \verb|Raspberry Pi 4 B|
-  \item minikomputer \verb|Raspberry Pi Zero W|
-  \item dwie kamery \verb|Camera Module v1 (OmniVision OV5647)|
-  \item smartfon
+  \item minikomputer \verb|Raspberry Pi 4 B|;
+  \item minikomputer \verb|Raspberry Pi Zero W|;
+  \item dwie kamery \verb|Camera Module v1 (OmniVision OV5647)|;
+  \item smartfon.
 \end{itemize}
 
 Na diagramie wdrożenia (\ref{deployment}) pokazano te urządzenia wraz z połączeniami między nimi oraz komponentami, jakie wchodzą w ich skład. \verb|Raspberry Pi 4| jest najważniejszym urządzeniem, które synchronizuje pracę innych oraz dokonuje obliczeń. Łączy się z kamerą za pomocą kabla taśmowego, a używa jej do wykrywania rzutu za pomocą biblioteki \verb|OpenCV|. Analogicznie wygląda to w przypadku \verb|Pi Zero|, na którym znajduje się druga instancja detektora rzutu. Informacje wysyłane są z \verb|Pi Zero| do \verb|Pi 4| z użyciem gniazd TCP. Na \verb|Pi 4| tworzony jest również serwer dla aplikacji mobilnej, która uruchamiana jest na smartfonie w środowisku Expo \cite{expo}. Połączenie następuje zgodnie ze standardem WebSocket.

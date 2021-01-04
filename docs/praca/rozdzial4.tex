@@ -1,7 +1,7 @@
 \chapter{Implementacja systemu}
 \thispagestyle{chapterBeginStyle}
 
-W tym rozdziale opisane są szczegóły implementacyjne projektu. Więcej uwagi poświęcono urządzeniom wchodzącym w skład systemu oraz opisano użyte technologie, wraz z uargumentowaniem, dlaczego to właśnie one zostały wybrane. Kolejnym elementem jest omówienie struktury projektu oraz wypunktowania, co znajduje się w poszczególnych plikach z kodem źródłowym. Zaprezentowano na przykładzie wynik działania systemu, opisano problemy napotkane w trakcie pracy oraz przedstawiono sposób prowadzenia projektu.
+W tym rozdziale opisane są szczegóły implementacyjne projektu. Poświęcono więcej uwagi urządzeniom wchodzącym w skład systemu oraz opisano użyte technologie, wraz z uargumentowaniem, dlaczego to właśnie one zostały wybrane. Kolejnym elementem jest omówienie struktury projektu oraz wypunktowanie, co znajduje się w poszczególnych plikach z kodem źródłowym. Zaprezentowano na przykładzie wynik działania systemu, opisano problemy napotkane w trakcie pracy oraz przedstawiono sposób prowadzenia projektu.
 
 \section{Opis urządzeń}
 
@@ -15,13 +15,13 @@ Początkowo planowano użycie jedynie jednego minikomputera, do którego podłą
 \section{Technologie}
 Użyte technologie:
 \begin{itemize}
-  \item Python 3.7
-  \item OpenCV 4.1.0
-  \item picamera 1.13
-  \item WebSocket
-  \item JavaScript ES6
-  \item React Native 0.63
-  \item Expo 39
+  \item Python 3.7;
+  \item OpenCV 4.1.0;
+  \item picamera 1.13;
+  \item WebSocket;
+  \item JavaScript ES6;
+  \item React Native 0.63;
+  \item Expo 39.
 \end{itemize}
 
 Kod źródłowy uruchamiany na obu urządzeniach Raspberry został napisany w języku Python 3.7. Został on wybrany z powodu jego prostoty oraz istnienia wielu bibliotek specyficznych dla minikomputera, które napisane są właśnie w tym języku. Wspiera on wiele paradygmatów programowania, dzięki czemu programista ma swobodę w wyborze sposobu implementacji rozwiązań. Automatyczne zarządzanie pamięcią zmniejsza ryzyko błędów, a sprawdzone biblioteki do operacji macierzowych zapewniają szybkość działania.
@@ -71,16 +71,16 @@ Folder z projektem o nazwie \verb|pi-darts| zawiera dwie aplikacje: \verb|app| i
 
 \subsubsection{Opis plików źródłowych}
 \begin{itemize}
-  \item \verb|main_pi4.py| -- główny skrypt uruchamiany na \verb|Pi 4|, konfiguruje pozostałe moduły i zawiera główną pętlę programu.
-  \item \verb|main_pi0.py| -- główny skrypt uruchamiany na \verb|Pi Zero|, bardzo podobny do \verb|main_pi4.py|. Również zawiera pętlę, w której wykonywane są nieustannie zdjęcia, lecz nie zajmuje się komunikacją z aplikacją.
-  \item \verb|app_connector.py| -- zawiera klasę serwera aplikacji, dostarcza interfejs do wystartowania serwera w osobnym wątku oraz wysyłania komunikatów do klientów.
-  \item \verb|pi_connector.py| -- używany przez oba urządzenia w celu ustanowienia połączenia. Składa się z dwóch klas: jednej dla serwera (\verb|Pi 4|), z metodami do uruchomienia gniazda TCP i przyjęcia wiadomości, a drugiej dla klienta (\verb|Pi Zero|), z funkcjami do podłączenia się do serwera oraz wysłania komunikatu.
-  \item \verb|camera.py| -- dodatkowy interfejs opakowujący metody biblioteki \verb|picamera|. Daje możliwość wstępnego ustawienia kamery oraz wykonania zdjęcia reprezentowanego w formacie zgodnym z OpenCV.
-  \item \verb|throw_detector.py| -- moduł, w którym zaimplementowana jest logika wykrywania rzutu. W tym miejscu wykonywane są wszystkie operacje na obrazach.
-  \item \verb|triangulation.py| -- plik, w którym zapisane są funkcje przeprowadzające triangulację
-  \item \verb|board_mapping.py| -- komponent przyporządkowujący pozycję rzutki we współrzędnych kartezjańskich do konkretnego pola na rzutce
-  \item \verb|App.js| -- główny komponent aplikacji mobilnej. Zarządza jej stanem oraz przekazuje informacje do \verb|Dartboard.js|.
-  \item \verb|Dartboard.js| -- komponent ze graficznym przedstawieniem tarczy, umożliwia zaznaczanie miejsca wbicia rzutki.
+  \item \verb|main_pi4.py| -- główny skrypt uruchamiany na \verb|Pi 4|, konfiguruje pozostałe moduły i zawiera główną pętlę programu;
+  \item \verb|main_pi0.py| -- główny skrypt uruchamiany na \verb|Pi Zero|, bardzo podobny do \verb|main_pi4.py|. Również zawiera pętlę, w której wykonywane są nieustannie zdjęcia, lecz nie zajmuje się komunikacją z aplikacją;
+  \item \verb|app_connector.py| -- zawiera klasę serwera aplikacji, dostarcza interfejs do wystartowania serwera w osobnym wątku oraz wysyłania komunikatów do klientów;
+  \item \verb|pi_connector.py| -- używany przez oba urządzenia w celu ustanowienia połączenia. Składa się z dwóch klas: jednej dla serwera (\verb|Pi 4|), z metodami do uruchomienia gniazda TCP i przyjęcia wiadomości, a drugiej dla klienta (\verb|Pi Zero|), z funkcjami do podłączenia się do serwera oraz wysłania komunikatu;
+  \item \verb|camera.py| -- dodatkowy interfejs opakowujący metody biblioteki \verb|picamera|. Daje możliwość wstępnego ustawienia kamery oraz wykonania zdjęcia reprezentowanego w formacie zgodnym z OpenCV;
+  \item \verb|throw_detector.py| -- moduł, w którym zaimplementowana jest logika wykrywania rzutu. W tym miejscu wykonywane są wszystkie operacje na obrazach;
+  \item \verb|triangulation.py| -- plik, w którym zapisane są funkcje przeprowadzające triangulację;
+  \item \verb|board_mapping.py| -- komponent przyporządkowujący pozycję rzutki we współrzędnych kartezjańskich do konkretnego pola na rzutce;
+  \item \verb|App.js| -- główny komponent aplikacji mobilnej. Zarządza jej stanem oraz przekazuje informacje do \verb|Dartboard.js|;
+  \item \verb|Dartboard.js| -- komponent ze graficznym przedstawieniem tarczy, umożliwia zaznaczanie miejsca wbicia rzutki;
   \item \verb|WebSocketClient.js| -- pomocniczy plik ustanawiający połączenie oraz przyjmujący komunikaty z serwera za pomocą technologii WebSocket.
   
 \end{itemize}
@@ -136,10 +136,10 @@ Rzut 1 & Rzut 2 & Rzut 3 & Łącznie \\ \hline
 \section{Problemy}
 Podczas tworzenia systemu natrafiono na szereg problemów, m.in:
 \begin{itemize}
-  \item ograniczone zasoby \verb|Raspberry Pi Zero|, powodujące przerywanie programu przy dużym obciążeniu.
-  \item mało skuteczne wykrywanie rzutki, gdy tło miało podobny kolor do koloru lotki. Z tego powodu za stelażem ustawiono prowizoryczne zasłony o odmiennych kolorach. Przez długi czas skuteczność obniżała również zbyt wczesna (tj. wykonana przed odjęciem tła) konwersja obrazu do skali szarości, powodująca stratę informacji.
-  \item instalacja biblioteki OpenCV, która (w przypadku kompilacji bezpośrednio ze źródeł), trwała na \verb|Pi Zero| ok. 20 godzin.
-  \item ustawienie rozdzielczości zdjęcia -- okazało się, że szerokość i wysokość muszą być wielokrotnościami 16.
+  \item ograniczone zasoby \verb|Raspberry Pi Zero|, powodujące przerywanie programu przy dużym obciążeniu;
+  \item mało skuteczne wykrywanie rzutki, gdy tło miało podobny kolor do koloru lotki. Z tego powodu za stelażem ustawiono prowizoryczne zasłony o odmiennych kolorach. Przez długi czas skuteczność obniżała również zbyt wczesna (tj. wykonana przed odjęciem tła) konwersja obrazu do skali szarości, powodująca stratę informacji;
+  \item instalacja biblioteki OpenCV, która (w przypadku kompilacji bezpośrednio ze źródeł), trwała na \verb|Pi Zero| ok. 20 godzin;
+  \item ustawienie rozdzielczości zdjęcia -- okazało się, że szerokość i wysokość muszą być wielokrotnościami 16;
   \item słaba jakość zdjęć -- przed użyciem i poprawną konfiguracją picamera, zdjęcia wykonywane w trakcie działania systemu były wyraźnie gorszej jakości niż te, wykonane statycznie, np. programem \verb|raspistill|.
 \end{itemize}
 \section{Prowadzenie projektu}
